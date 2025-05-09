@@ -75,6 +75,12 @@ class BasketballSimulator:
         The simulation uses offensive and defensive ratings, along with some randomness,
         to determine the winner.
         """
+        # Handle None values
+        if team1_name is None:
+            return team2_name
+        if team2_name is None:
+            return team1_name
+        
         team1 = self.team_dict[team1_name]
         team2 = self.team_dict[team2_name]
         
@@ -181,42 +187,59 @@ class BasketballSimulator:
                 
                 # Determine which Final Four spot to fill
                 region_idx = self.regions.index(region)
-                if region_idx < 2:
-                    self.bracket['final_four']['semifinals'][0] = {
-                        'team1': winner if region_idx == 0 else None,
-                        'team2': winner if region_idx == 1 else self.bracket['final_four']['semifinals'][0]['team1'] if self.bracket['final_four']['semifinals'][0] else None,
-                        'winner': None
-                    }
-                else:
-                    self.bracket['final_four']['semifinals'][1] = {
-                        'team1': winner if region_idx == 2 else None,
-                        'team2': winner if region_idx == 3 else self.bracket['final_four']['semifinals'][1]['team1'] if self.bracket['final_four']['semifinals'][1] else None,
-                        'winner': None
-                    }
+                if region_idx == 0:
+                    if not self.bracket['final_four']['semifinals'][0]:
+                        self.bracket['final_four']['semifinals'][0] = {'team1': winner, 'team2': None, 'winner': None}
+                    else:
+                        self.bracket['final_four']['semifinals'][0]['team2'] = winner
+                elif region_idx == 1:
+                    if not self.bracket['final_four']['semifinals'][0]:
+                        self.bracket['final_four']['semifinals'][0] = {'team1': None, 'team2': winner, 'winner': None}
+                    else:
+                        self.bracket['final_four']['semifinals'][0]['team2'] = winner
+                elif region_idx == 2:
+                    if not self.bracket['final_four']['semifinals'][1]:
+                        self.bracket['final_four']['semifinals'][1] = {'team1': winner, 'team2': None, 'winner': None}
+                    else:
+                        self.bracket['final_four']['semifinals'][1]['team2'] = winner
+                elif region_idx == 3:
+                    if not self.bracket['final_four']['semifinals'][1]:
+                        self.bracket['final_four']['semifinals'][1] = {'team1': None, 'team2': winner, 'winner': None}
+                    else:
+                        self.bracket['final_four']['semifinals'][1]['team2'] = winner
         
         else:  # Final Four
             if round_type == 'semifinals':
                 for i, matchup in enumerate(self.bracket['final_four']['semifinals']):
-                    winner = self.simulate_game(matchup['team1'], matchup['team2'])
-                    matchup['winner'] = winner
-                    
-                    # Set up the championship game
-                    if i == 0:
-                        self.bracket['final_four']['championship'] = {
-                            'team1': winner,
-                            'team2': None,
-                            'winner': None
-                        }
-                    else:
-                        self.bracket['final_four']['championship']['team2'] = winner
+                    if matchup and matchup['team1'] and matchup['team2']:
+                        winner = self.simulate_game(matchup['team1'], matchup['team2'])
+                        matchup['winner'] = winner
+                        
+                        # Set up the championship game
+                        if i == 0:
+                            self.bracket['final_four']['championship'] = {
+                                'team1': winner,
+                                'team2': None,
+                                'winner': None
+                            }
+                        else:
+                            if self.bracket['final_four']['championship']:
+                                self.bracket['final_four']['championship']['team2'] = winner
+                            else:
+                                self.bracket['final_four']['championship'] = {
+                                    'team1': None,
+                                    'team2': winner,
+                                    'winner': None
+                                }
             
             elif round_type == 'championship':
                 matchup = self.bracket['final_four']['championship']
-                winner = self.simulate_game(matchup['team1'], matchup['team2'])
-                matchup['winner'] = winner
-                
-                # Set the champion
-                self.bracket['final_four']['champion'] = winner
+                if matchup and matchup['team1'] and matchup['team2']:
+                    winner = self.simulate_game(matchup['team1'], matchup['team2'])
+                    matchup['winner'] = winner
+                    
+                    # Set the champion
+                    self.bracket['final_four']['champion'] = winner
     
     def simulate_tournament(self):
         """Simulate the entire tournament from start to finish."""
