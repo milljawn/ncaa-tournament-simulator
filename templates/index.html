@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCAA Basketball Tournament Simulation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>NCAA Basketball Tournament Simulation</h1>
+        <p>Based on 2025 KenPom Ratings</p>
+    </header>
+
+    <div class="tournament-container">
+        <div class="regions-container">
+            {% for region in results.regions %}
+            <div class="region">
+                <h2>{{ region }} Region</h2>
+                
+                <div class="rounds">
+                    <!-- First Round -->
+                    <div class="round round-of-64">
+                        <h3>First Round</h3>
+                        <div class="matchups">
+                            {% for matchup in results.regions[region].first_round %}
+                            <div class="matchup">
+                                <div class="team {% if matchup.winner == matchup.team1.name %}winner{% endif %}">
+                                    <span class="seed">{{ matchup.team1.details.SeedNum }}</span>
+                                    <span class="name">{{ matchup.team1.name }}</span>
+                                </div>
+                                <div class="team {% if matchup.winner == matchup.team2.name %}winner{% endif %}">
+                                    <span class="seed">{{ matchup.team2.details.SeedNum }}</span>
+                                    <span class="name">{{ matchup.team2.name }}</span>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <!-- Second Round -->
+                    <div class="round round-of-32">
+                        <h3>Second Round</h3>
+                        <div class="matchups">
+                            {% for matchup in results.regions[region].second_round %}
+                            <div class="matchup">
+                                <div class="team {% if matchup.winner == matchup.team1.name %}winner{% endif %}">
+                                    <span class="seed">{{ matchup.team1.details.SeedNum }}</span>
+                                    <span class="name">{{ matchup.team1.name }}</span>
+                                </div>
+                                <div class="team {% if matchup.winner == matchup.team2.name %}winner{% endif %}">
+                                    <span class="seed">{{ matchup.team2.details.SeedNum }}</span>
+                                    <span class="name">{{ matchup.team2.name }}</span>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <!-- Sweet 16 -->
+                    <div class="round sweet-16">
+                        <h3>Sweet 16</h3>
+                        <div class="matchups">
+                            {% for matchup in results.regions[region].sweet_sixteen %}
+                            <div class="matchup">
+                                <div class="team {% if matchup.winner == matchup.team1.name %}winner{% endif %}">
+                                    <span class="seed">{{ matchup.team1.details.SeedNum }}</span>
+                                    <span class="name">{{ matchup.team1.name }}</span>
+                                </div>
+                                <div class="team {% if matchup.winner == matchup.team2.name %}winner{% endif %}">
+                                    <span class="seed">{{ matchup.team2.details.SeedNum }}</span>
+                                    <span class="name">{{ matchup.team2.name }}</span>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <!-- Elite 8 -->
+                    <div class="round elite-8">
+                        <h3>Elite 8</h3>
+                        <div class="matchups">
+                            <div class="matchup">
+                                <div class="team {% if results.regions[region].elite_eight.winner == results.regions[region].elite_eight.team1.name %}winner{% endif %}">
+                                    <span class="seed">{{ results.regions[region].elite_eight.team1.details.SeedNum }}</span>
+                                    <span class="name">{{ results.regions[region].elite_eight.team1.name }}</span>
+                                </div>
+                                <div class="team {% if results.regions[region].elite_eight.winner == results.regions[region].elite_eight.team2.name %}winner{% endif %}">
+                                    <span class="seed">{{ results.regions[region].elite_eight.team2.details.SeedNum }}</span>
+                                    <span class="name">{{ results.regions[region].elite_eight.team2.name }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Regional Champion -->
+                    <div class="round final-four-qualifier">
+                        <h3>Final Four</h3>
+                        <div class="champion">
+                            <div class="team">
+                                <span class="seed">{{ results.regions[region].elite_eight.winner|seed(results) }}</span>
+                                <span class="name">{{ results.regions[region].regional_champion }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Final Four -->
+        <div class="final-four">
+            <h2>Final Four</h2>
+            
+            <div class="semifinal-container">
+                <div class="semifinal">
+                    <div class="team {% if results.final_four.semifinals[0].winner == results.final_four.semifinals[0].team1.name %}winner{% endif %}">
+                        <span class="seed">{{ results.final_four.semifinals[0].team1.details.SeedNum }}</span>
+                        <span class="name">{{ results.final_four.semifinals[0].team1.name }}</span>
+                    </div>
+                    <div class="team {% if results.final_four.semifinals[0].winner == results.final_four.semifinals[0].team2.name %}winner{% endif %}">
+                        <span class="seed">{{ results.final_four.semifinals[0].team2.details.SeedNum }}</span>
+                        <span class="name">{{ results.final_four.semifinals[0].team2.name }}</span>
+                    </div>
+                </div>
+                
+                <div class="semifinal">
+                    <div class="team {% if results.final_four.semifinals[1].winner == results.final_four.semifinals[1].team1.name %}winner{% endif %}">
+                        <span class="seed">{{ results.final_four.semifinals[1].team1.details.SeedNum }}</span>
+                        <span class="name">{{ results.final_four.semifinals[1].team1.name }}</span>
+                    </div>
+                    <div class="team {% if results.final_four.semifinals[1].winner == results.final_four.semifinals[1].team2.name %}winner{% endif %}">
+                        <span class="seed">{{ results.final_four.semifinals[1].team2.details.SeedNum }}</span>
+                        <span class="name">{{ results.final_four.semifinals[1].team2.name }}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Championship Game -->
+            <div class="championship">
+                <h3>Championship Game</h3>
+                <div class="matchup">
+                    <div class="team {% if results.final_four.championship.winner == results.final_four.championship.team1.name %}winner{% endif %}">
+                        <span class="seed">{{ results.final_four.championship.team1.details.SeedNum }}</span>
+                        <span class="name">{{ results.final_four.championship.team1.name }}</span>
+                    </div>
+                    <div class="team {% if results.final_four.championship.winner == results.final_four.championship.team2.name %}winner{% endif %}">
+                        <span class="seed">{{ results.final_four.championship.team2.details.SeedNum }}</span>
+                        <span class="name">{{ results.final_four.championship.team2.name }}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Champion -->
+            <div class="national-champion">
+                <h3>National Champion</h3>
+                <div class="champion">
+                    <div class="team">
+                        <span class="name">{{ results.final_four.champion }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="simulation-controls">
+        <button id="simulate-button">Run New Simulation</button>
+        <div class="simulation-info">
+            <p>Last simulation run: {{ results.metadata.simulation_time }}</p>
+            <p>Simulation ID: {{ results.metadata.simulation_id }}</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Based on 2025 KenPom College Basketball Ratings</p>
+        <p>Data powered by <a href="https://kenpom.com" target="_blank">KenPom.com</a></p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
