@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +15,11 @@
     </header>
 
     <div class="tournament-container">
+        <div class="instructions">
+            <p><strong>Drag and drop teams</strong> in the First Round to create your own matchups!</p>
+            <p>After setting up your desired matchups, click "Run Simulation" to see the results.</p>
+        </div>
+        
         <div class="regions-container">
             {% for region in results.regions %}
             <div class="region">
@@ -25,14 +31,28 @@
                         <h3>First Round</h3>
                         <div class="matchups">
                             {% for matchup in results.regions[region].first_round %}
-                            <div class="matchup">
-                                <div class="team {% if matchup.winner == matchup.team1.name %}winner{% endif %}">
+                            <div class="matchup" data-matchup-id="{{ region }}-{{ loop.index0 }}">
+                                <div class="team draggable {% if matchup.winner == matchup.team1.name %}winner{% endif %}" 
+                                     draggable="true" 
+                                     data-team-id="{{ matchup.team1.name|slugify }}"
+                                     data-team-seed="{{ matchup.team1.details.SeedNum }}"
+                                     data-region="{{ region }}"
+                                     data-position="top"
+                                     data-matchup-index="{{ loop.index0 }}">
                                     <span class="seed">{{ matchup.team1.details.SeedNum }}</span>
                                     <span class="name">{{ matchup.team1.name }}</span>
+                                    <span class="drag-handle">⋮⋮</span>
                                 </div>
-                                <div class="team {% if matchup.winner == matchup.team2.name %}winner{% endif %}">
+                                <div class="team draggable {% if matchup.winner == matchup.team2.name %}winner{% endif %}"
+                                     draggable="true"
+                                     data-team-id="{{ matchup.team2.name|slugify }}"
+                                     data-team-seed="{{ matchup.team2.details.SeedNum }}"
+                                     data-region="{{ region }}"
+                                     data-position="bottom"
+                                     data-matchup-index="{{ loop.index0 }}">
                                     <span class="seed">{{ matchup.team2.details.SeedNum }}</span>
                                     <span class="name">{{ matchup.team2.name }}</span>
+                                    <span class="drag-handle">⋮⋮</span>
                                 </div>
                             </div>
                             {% endfor %}
@@ -165,7 +185,8 @@
     </div>
     
     <div class="simulation-controls">
-        <button id="simulate-button">Run New Simulation</button>
+        <button id="reset-button">Reset Bracket</button>
+        <button id="simulate-button">Run Simulation</button>
         <div class="simulation-info">
             <p>Last simulation run: {{ results.metadata.simulation_time }}</p>
             <p>Simulation ID: {{ results.metadata.simulation_id }}</p>
@@ -180,3 +201,4 @@
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
+```

@@ -4,6 +4,8 @@ import numpy as np
 import json
 import os
 from datetime import datetime
+import pickle
+from collections import defaultdict
 
 class BasketballSimulator:
     def __init__(self, teams_data_path):
@@ -26,6 +28,63 @@ class BasketballSimulator:
         
         # Set up bracket structure
         self.bracket = self._initialize_bracket()
+        
+        # Load historical results if available
+        self.historical_results = self._load_historical_results()
+        
+        # Define the statistic category weights (from most to least important)
+        self.stat_weights = {
+            'Tempo': 1.0,
+            'TempoRank': 0.9,
+            'ORating': 0.8,
+            'DRating': 0.7,
+            'ORank': 0.6,
+            'DRank': 0.5,
+            'NetRating': 0.4,
+            'Seed': 0.3,
+            'SeedNum': 0.2,
+            'Record': 0.1,
+            'Region': 0.05,
+            'Team': 0.01,
+            'Conference': 0.01
+        }
+    
+    def _load_historical_results(self):
+        """Load historical tournament results for learning."""
+        history_file = 'data/tournament_history.pkl'
+        
+        if os.path.exists(history_file):
+            try:
+                with open(history_file, 'rb') as f:
+                    return pickle.load(f)
+            except Exception as e:
+                print(f"Error loading historical data: {e}")
+                return self._initialize_historical_results()
+        else:
+            return self._initialize_historical_results()
+    
+    def _initialize_historical_results(self):
+        """Initialize the historical results structure."""
+        return {
+            'matchups': defaultdict(lambda: defaultdict(int)),  # Store team vs team results
+            'team_stats': defaultdict(lambda: {
+                'wins': 0,
+                'losses': 0,
+                'round_reached': defaultdict(int)
+            }),
+            'simulation_count': 0
+        }
+    
+    def _save_historical_results(self):
+        """Save the historical results to disk."""
+        history_file = 'data/tournament_history.pkl'
+        os.makedirs(os.path.dirname(history_file), exist_ok=True)
+        
+        try:
+            with open(history_file, 'wb') as f:
+                pickle.dump(self.historical_results, f)
+        except Exception as e:
+            print(f"Error saving historical data: {e}")
     
     def _initialize_bracket(self):
         """Initialize the tournament bracket structure"""
@@ -68,12 +127,112 @@ class BasketballSimulator:
         
         return bracket
     
-    def simulate_game(self, team1_name, team2_name):
+    def calculate_team_strength(self, team_name, round_name='first_round'):
+        """
+        Calculate team strength based on weighted statistics and historical performance.
+        
+        Args:
+            team_name: The name of the team
+            round_name: The current tournament round, affects the weighting
+        """
+        team = self.team_dict[team_name]
+        
+        # Base strength from weighted statistics
+        strength = 0
+        
+        # Apply weights to each statistic (note: lower ranks are better)
+        if 'Tempo' in team:
+            strength += team['Tempo'] * self.stat_weights['Tempo']
+        
+        if 'TempoRank' in team and team['TempoRank'] is not None:
+            # Convert rank (lower is better) to a positive contribution
+            strength += (400 - team['TempoRank']) / 400 * self.stat_weights['TempoRank']
+        
+        if 'ORating' in team:
+            strength += team['ORating'] * self.stat_weights['ORating'] / 100
+        
+        if 'DRating' in team:
+            # Lower defensive rating is better
+            strength += (120 - team['DRating']) * self.stat_weights['DRating'] / 100
+        
+        if 'ORank' in team and team['ORank'] is not None:
+            # Convert rank to a positive contribution
+            strength += (400 - team['ORank']) / 400 * self.stat_weights['ORank']
+        
+        if 'DRank' in team and team['DRank'] is not None:
+            # Convert rank to a positive contribution
+            strength += (400 - team['DRank']) / 400 * self.stat_weights['DRank']
+        
+        if 'NetRating' in team:
+            # NetRating can be negative, so we adjust to ensure positive contribution for good teams
+            strength += (team['NetRating'] + 50) * self.stat_weights['NetRating'] / 100
+        
+        if 'SeedNum' in team:
+            # Lower seed is better, so invert
+            strength += (17 - team['SeedNum']) * self.stat_weights['SeedNum'] / 16
+        
+        # Record contribution (win percentage)
+        if 'Record' in team:
+            try:
+                w, l = map(int, team['Record'].split('-'))
+                win_pct = w / (w + l)
+                strength += win_pct * self.stat_weights['Record']
+            except:
+                pass
+        
+        # Conference strength could be factored in but requires additional data
+        # For now, we'll use a small constant for conferences
+        if 'Conference' in team:
+            # Could be enhanced with conference strength data
+            power_conferences = ['B12', 'SEC', 'B10', 'ACC', 'BE', 'MWC']
+            conf_factor = 0.05 if team['Conference'] in power_conferences else 0.02
+            strength += conf_factor * self.stat_weights['Conference']
+        
+        # Historical performance adjustment
+        if self.historical_results['simulation_count'] > 0:
+            team_history = self.historical_results['team_stats'].get(team_name, {'wins': 0, 'losses': 0})
+            
+            # Calculate win percentage from historical simulations
+            total_games = team_history['wins'] + team_history['losses']
+            if total_games > 0:
+                historical_win_pct = team_history['wins'] / total_games
+                
+                # Weight historical performance more in later rounds
+                round_weights = {
+                    'first_round': 0.05,
+                    'second_round': 0.1,
+                    'sweet_sixteen': 0.15,
+                    'elite_eight': 0.2,
+                    'semifinals': 0.25,
+                    'championship': 0.3
+                }
+                
+                # Add historical performance contribution
+                strength += historical_win_pct * round_weights.get(round_name, 0.1)
+                
+                # Add bonus for teams that historically go far in the tournament
+                deep_run_bonus = 0
+                for round_reached, count in team_history['round_reached'].items():
+                    if round_reached in ['elite_eight', 'semifinals', 'championship', 'champion']:
+                        round_value = {
+                            'elite_eight': 0.05,
+                            'semifinals': 0.1,
+                            'championship': 0.15,
+                            'champion': 0.2
+                        }
+                        deep_run_bonus += count * round_value[round_reached]
+                
+                # Cap the deep run bonus and add it to strength
+                deep_run_bonus = min(deep_run_bonus, 0.3)
+                strength += deep_run_bonus
+        
+        return strength
+    
+    def simulate_game(self, team1_name, team2_name, round_name='first_round'):
         """
         Simulate a single game between two teams, returning the winner.
         
-        The simulation uses offensive and defensive ratings, along with some randomness,
-        to determine the winner.
+        The simulation uses weighted statistics and historical learning to determine the winner.
         """
         # Handle None values
         if team1_name is None:
@@ -81,26 +240,72 @@ class BasketballSimulator:
         if team2_name is None:
             return team1_name
         
+        # Calculate team strengths based on weighted statistics
+        team1_strength = self.calculate_team_strength(team1_name, round_name)
+        team2_strength = self.calculate_team_strength(team2_name, round_name)
+        
+        # Add randomness factor (more randomness in earlier rounds)
+        randomness_factor = {
+            'first_round': 0.3,
+            'second_round': 0.25,
+            'sweet_sixteen': 0.2,
+            'elite_eight': 0.15,
+            'semifinals': 0.1,
+            'championship': 0.05
+        }.get(round_name, 0.2)
+        
+        team1_strength += np.random.normal(0, randomness_factor * team1_strength)
+        team2_strength += np.random.normal(0, randomness_factor * team2_strength)
+        
+        # Check historical head-to-head results if available
+        if self.historical_results['simulation_count'] > 0:
+            matchup_key = tuple(sorted([team1_name, team2_name]))
+            matchup_history = self.historical_results['matchups'][matchup_key]
+            
+            if team1_name in matchup_history and team2_name in matchup_history:
+                team1_wins = matchup_history[team1_name]
+                team2_wins = matchup_history[team2_name]
+                total_matchups = team1_wins + team2_wins
+                
+                if total_matchups > 0:
+                    # Weight the historical matchup more in later rounds
+                    history_weight = {
+                        'first_round': 0.1,
+                        'second_round': 0.15,
+                        'sweet_sixteen': 0.2,
+                        'elite_eight': 0.25,
+                        'semifinals': 0.3,
+                        'championship': 0.35
+                    }.get(round_name, 0.15)
+                    
+                    # Adjust strengths based on head-to-head history
+                    team1_advantage = (team1_wins / total_matchups - 0.5) * 2  # Range: -1 to 1
+                    team1_strength += team1_advantage * history_weight * team1_strength
+                    team2_strength -= team1_advantage * history_weight * team2_strength
+        
+        # Factor in seed-based upset potential
         team1 = self.team_dict[team1_name]
         team2 = self.team_dict[team2_name]
         
-        # Use the net ratings and add some randomness
-        team1_strength = team1['NetRating'] + np.random.normal(0, 5)  # Add some noise
-        team2_strength = team2['NetRating'] + np.random.normal(0, 5)
-        
-        # Incorporate upset probability based on seed differences
         seed_diff = abs(team1['SeedNum'] - team2['SeedNum'])
-        
-        # Lower seeds have a better chance of upsets in closer seed matchups
         if seed_diff > 0:
             higher_seed = team1 if team1['SeedNum'] < team2['SeedNum'] else team2
             lower_seed = team2 if higher_seed == team1 else team1
             
             # Calculate upset factor - decreases as the tournament progresses
-            upset_factor = min(5, seed_diff) * np.random.random() * 2
+            round_upset_factor = {
+                'first_round': 0.8,
+                'second_round': 0.6,
+                'sweet_sixteen': 0.4,
+                'elite_eight': 0.3,
+                'semifinals': 0.2,
+                'championship': 0.1
+            }.get(round_name, 0.5)
+            
+            upset_factor = min(5, seed_diff) * np.random.random() * round_upset_factor
             
             # Apply upset adjustment
-            if higher_seed == team1:
+            if higher_seed['Team'] == team1_name:
                 team2_strength += upset_factor
             else:
                 team1_strength += upset_factor
@@ -126,8 +331,11 @@ class BasketballSimulator:
                 next_round_idx = 0
                 
                 for i, matchup in enumerate(matchups):
-                    winner = self.simulate_game(matchup['team1'], matchup['team2'])
+                    winner = self.simulate_game(matchup['team1'], matchup['team2'], round_type)
                     matchup['winner'] = winner
+                    
+                    # Update historical results
+                    self._update_historical_results(matchup['team1'], matchup['team2'], winner, round_type)
                     
                     # Set up the next round
                     if i % 2 == 0:
@@ -146,8 +354,11 @@ class BasketballSimulator:
                 next_round_idx = 0
                 
                 for i, matchup in enumerate(matchups):
-                    winner = self.simulate_game(matchup['team1'], matchup['team2'])
+                    winner = self.simulate_game(matchup['team1'], matchup['team2'], round_type)
                     matchup['winner'] = winner
+                    
+                    # Update historical results
+                    self._update_historical_results(matchup['team1'], matchup['team2'], winner, round_type)
                     
                     # Set up the Sweet 16
                     if i % 2 == 0:
@@ -164,8 +375,11 @@ class BasketballSimulator:
                 matchups = self.bracket['regions'][region][round_type]
                 
                 for i, matchup in enumerate(matchups):
-                    winner = self.simulate_game(matchup['team1'], matchup['team2'])
+                    winner = self.simulate_game(matchup['team1'], matchup['team2'], round_type)
                     matchup['winner'] = winner
+                    
+                    # Update historical results
+                    self._update_historical_results(matchup['team1'], matchup['team2'], winner, round_type)
                     
                     # Set up the Elite 8
                     if i == 0:
@@ -179,11 +393,17 @@ class BasketballSimulator:
                 
             elif round_type == 'elite_eight':
                 matchup = self.bracket['regions'][region][round_type]
-                winner = self.simulate_game(matchup['team1'], matchup['team2'])
+                winner = self.simulate_game(matchup['team1'], matchup['team2'], round_type)
                 matchup['winner'] = winner
+                
+                # Update historical results
+                self._update_historical_results(matchup['team1'], matchup['team2'], winner, round_type)
                 
                 # Set the regional champion
                 self.bracket['regions'][region]['regional_champion'] = winner
+                
+                # Update team's round reached
+                self._update_round_reached(winner, round_type)
                 
                 # Determine which Final Four spot to fill
                 region_idx = self.regions.index(region)
@@ -212,8 +432,14 @@ class BasketballSimulator:
             if round_type == 'semifinals':
                 for i, matchup in enumerate(self.bracket['final_four']['semifinals']):
                     if matchup and matchup['team1'] and matchup['team2']:
-                        winner = self.simulate_game(matchup['team1'], matchup['team2'])
+                        winner = self.simulate_game(matchup['team1'], matchup['team2'], round_type)
                         matchup['winner'] = winner
+                        
+                        # Update historical results
+                        self._update_historical_results(matchup['team1'], matchup['team2'], winner, round_type)
+                        
+                        # Update team's round reached
+                        self._update_round_reached(winner, round_type)
                         
                         # Set up the championship game
                         if i == 0:
@@ -235,11 +461,36 @@ class BasketballSimulator:
             elif round_type == 'championship':
                 matchup = self.bracket['final_four']['championship']
                 if matchup and matchup['team1'] and matchup['team2']:
-                    winner = self.simulate_game(matchup['team1'], matchup['team2'])
+                    winner = self.simulate_game(matchup['team1'], matchup['team2'], round_type)
                     matchup['winner'] = winner
+                    
+                    # Update historical results
+                    self._update_historical_results(matchup['team1'], matchup['team2'], winner, round_type)
+                    
+                    # Update team's round reached
+                    self._update_round_reached(winner, 'champion')
                     
                     # Set the champion
                     self.bracket['final_four']['champion'] = winner
+    
+    def _update_historical_results(self, team1, team2, winner, round_name):
+        """Update historical results with the outcome of a game."""
+        # Skip if either team is None
+        if team1 is None or team2 is None:
+            return
+        
+        # Update matchup history
+        matchup_key = tuple(sorted([team1, team2]))
+        self.historical_results['matchups'][matchup_key][winner] += 1
+        
+        # Update team win/loss records
+        loser = team2 if winner == team1 else team1
+        self.historical_results['team_stats'][winner]['wins'] += 1
+        self.historical_results['team_stats'][loser]['losses'] += 1
+    
+    def _update_round_reached(self, team, round_name):
+        """Update the furthest round reached by a team."""
+        self.historical_results['team_stats'][team]['round_reached'][round_name] += 1
     
     def simulate_tournament(self):
         """Simulate the entire tournament from start to finish."""
@@ -253,6 +504,12 @@ class BasketballSimulator:
         # Then simulate the Final Four
         self.simulate_round('semifinals')
         self.simulate_round('championship')
+        
+        # Increment simulation count
+        self.historical_results['simulation_count'] += 1
+        
+        # Save the updated historical results
+        self._save_historical_results()
         
         return self.bracket
     
@@ -363,7 +620,8 @@ class BasketballSimulator:
         # Add simulation metadata
         enriched['metadata'] = {
             'simulation_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-            'simulation_id': np.random.randint(1000000, 9999999)
+            'simulation_id': np.random.randint(1000000, 9999999),
+            'historical_simulations': self.historical_results['simulation_count']
         }
         
         return enriched
@@ -377,8 +635,8 @@ def simulate_single_tournament(input_csv, output_json):
 
 if __name__ == "__main__":
     # Example usage
-    input_csv = "tournament_teams.csv"
-    output_json = "tournament_results.json"
+    input_csv = "data/tournament_teams.csv"
+    output_json = "data/tournament_results.json"
     
     results_file = simulate_single_tournament(input_csv, output_json)
     print(f"Tournament simulation completed. Results saved to {results_file}")

@@ -1,8 +1,27 @@
 #!/usr/bin/env python3
 from functools import wraps
+import re
+import unicodedata
 
 def register_jinja_filters(app):
     """Register custom Jinja2 filters for the Flask app."""
+    
+    @app.template_filter('slugify')
+    def slugify(value):
+        """
+        Convert a string to a URL-friendly slug.
+        
+        Example:
+            "North Carolina State" -> "north-carolina-state"
+        """
+        # Normalize unicode characters
+        value = unicodedata.normalize('NFKD', str(value)).encode('ascii', 'ignore').decode('ascii')
+        # Convert to lowercase
+        value = value.lower()
+        # Replace spaces with hyphens
+        value = re.sub(r'[^\w\s-]', '', value).strip()
+        value = re.sub(r'[\s-]+', '-', value)
+        return value
     
     @app.template_filter('seed')
     def get_team_seed(team_name, results):
