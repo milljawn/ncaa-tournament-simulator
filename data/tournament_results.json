@@ -1,0 +1,2634 @@
+{
+    "regions": {
+      "East": {
+        "first_round": [
+          {
+            "team1": {
+              "name": "Duke",
+              "details": {
+                "Rank": 1,
+                "Team": "Duke",
+                "Seed": 1,
+                "Conference": "ACC",
+                "Record": "35-4",
+                "NetRating": 39.29,
+                "ORating": 130.1,
+                "ORank": 1,
+                "DRating": 90.8,
+                "DRank": 5,
+                "Tempo": 66.0,
+                "TempoRank": 269,
+                "SeedNum": 1.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "Norfolk St.",
+              "details": {
+                "Rank": 178,
+                "Team": "Norfolk St.",
+                "Seed": 16,
+                "Conference": "MEAC",
+                "Record": "24-11",
+                "NetRating": -1.63,
+                "ORating": 107.5,
+                "ORank": 156,
+                "DRating": 109.1,
+                "DRank": 222,
+                "Tempo": 66.5,
+                "TempoRank": 229,
+                "SeedNum": 16.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Norfolk St."
+          },
+          {
+            "team1": {
+              "name": "Gonzaga",
+              "details": {
+                "Rank": 8,
+                "Team": "Gonzaga",
+                "Seed": 8,
+                "Conference": "WCC",
+                "Record": "26-9",
+                "NetRating": 28.01,
+                "ORating": 124.7,
+                "ORank": 6,
+                "DRating": 96.7,
+                "DRank": 29,
+                "Tempo": 70.5,
+                "TempoRank": 42,
+                "SeedNum": 8.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "Baylor",
+              "details": {
+                "Rank": 30,
+                "Team": "Baylor",
+                "Seed": 9,
+                "Conference": "B12",
+                "Record": "20-15",
+                "NetRating": 20.83,
+                "ORating": 121.3,
+                "ORank": 16,
+                "DRating": 100.4,
+                "DRank": 62,
+                "Tempo": 64.6,
+                "TempoRank": 328,
+                "SeedNum": 9.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Baylor"
+          },
+          {
+            "team1": {
+              "name": "Michigan",
+              "details": {
+                "Rank": 21,
+                "Team": "Michigan",
+                "Seed": 5,
+                "Conference": "B10",
+                "Record": "27-10",
+                "NetRating": 23.45,
+                "ORating": 116.5,
+                "ORank": 43,
+                "DRating": 93.1,
+                "DRank": 12,
+                "Tempo": 70.1,
+                "TempoRank": 54,
+                "SeedNum": 5.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "UC San Diego",
+              "details": {
+                "Rank": 39,
+                "Team": "UC San Diego",
+                "Seed": 12,
+                "Conference": "BW",
+                "Record": "30-5",
+                "NetRating": 18.25,
+                "ORating": 115.0,
+                "ORank": 61,
+                "DRating": 96.7,
+                "DRank": 30,
+                "Tempo": 65.8,
+                "TempoRank": 278,
+                "SeedNum": 12.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Michigan"
+          },
+          {
+            "team1": {
+              "name": "Maryland",
+              "details": {
+                "Rank": 10,
+                "Team": "Maryland",
+                "Seed": 4,
+                "Conference": "B10",
+                "Record": "27-9",
+                "NetRating": 27.07,
+                "ORating": 118.9,
+                "ORank": 23,
+                "DRating": 91.9,
+                "DRank": 7,
+                "Tempo": 69.6,
+                "TempoRank": 66,
+                "SeedNum": 4.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "Yale",
+              "details": {
+                "Rank": 74,
+                "Team": "Yale",
+                "Seed": 13,
+                "Conference": "Ivy",
+                "Record": "22-8",
+                "NetRating": 11.02,
+                "ORating": 115.2,
+                "ORank": 59,
+                "DRating": 104.2,
+                "DRank": 115,
+                "Tempo": 67.7,
+                "TempoRank": 169,
+                "SeedNum": 13.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Yale"
+          },
+          {
+            "team1": {
+              "name": "Illinois",
+              "details": {
+                "Rank": 17,
+                "Team": "Illinois",
+                "Seed": 6,
+                "Conference": "B10",
+                "Record": "22-13",
+                "NetRating": 24.32,
+                "ORating": 121.9,
+                "ORank": 14,
+                "DRating": 97.6,
+                "DRank": 40,
+                "Tempo": 71.5,
+                "TempoRank": 17,
+                "SeedNum": 6.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "North Carolina",
+              "details": {
+                "Rank": 31,
+                "Team": "North Carolina",
+                "Seed": 11,
+                "Conference": "ACC",
+                "Record": "23-14",
+                "NetRating": 20.33,
+                "ORating": 119.2,
+                "ORank": 21,
+                "DRating": 98.9,
+                "DRank": 47,
+                "Tempo": 70.7,
+                "TempoRank": 34,
+                "SeedNum": 11.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Illinois"
+          },
+          {
+            "team1": {
+              "name": "Texas Tech",
+              "details": {
+                "Rank": 9,
+                "Team": "Texas Tech",
+                "Seed": 3,
+                "Conference": "B12",
+                "Record": "28-9",
+                "NetRating": 27.92,
+                "ORating": 125.4,
+                "ORank": 5,
+                "DRating": 97.5,
+                "DRank": 39,
+                "Tempo": 66.1,
+                "TempoRank": 264,
+                "SeedNum": 3.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "Lipscomb",
+              "details": {
+                "Rank": 89,
+                "Team": "Lipscomb",
+                "Seed": 14,
+                "Conference": "ASun",
+                "Record": "25-10",
+                "NetRating": 8.55,
+                "ORating": 112.0,
+                "ORank": 88,
+                "DRating": 103.5,
+                "DRank": 101,
+                "Tempo": 66.2,
+                "TempoRank": 253,
+                "SeedNum": 14.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Texas Tech"
+          },
+          {
+            "team1": {
+              "name": "UCLA",
+              "details": {
+                "Rank": 20,
+                "Team": "UCLA",
+                "Seed": 7,
+                "Conference": "B10",
+                "Record": "23-11",
+                "NetRating": 23.46,
+                "ORating": 117.3,
+                "ORank": 37,
+                "DRating": 93.8,
+                "DRank": 14,
+                "Tempo": 65.0,
+                "TempoRank": 312,
+                "SeedNum": 7.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "Arkansas",
+              "details": {
+                "Rank": 36,
+                "Team": "Arkansas",
+                "Seed": 10,
+                "Conference": "SEC",
+                "Record": "22-14",
+                "NetRating": 19.33,
+                "ORating": 114.4,
+                "ORank": 64,
+                "DRating": 95.1,
+                "DRank": 18,
+                "Tempo": 69.4,
+                "TempoRank": 69,
+                "SeedNum": 10.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Arkansas"
+          },
+          {
+            "team1": {
+              "name": "Tennessee",
+              "details": {
+                "Rank": 5,
+                "Team": "Tennessee",
+                "Seed": 2,
+                "Conference": "SEC",
+                "Record": "30-8",
+                "NetRating": 30.93,
+                "ORating": 120.7,
+                "ORank": 17,
+                "DRating": 89.7,
+                "DRank": 3,
+                "Tempo": 63.7,
+                "TempoRank": 349,
+                "SeedNum": 2.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "Wofford",
+              "details": {
+                "Rank": 114,
+                "Team": "Wofford",
+                "Seed": 15,
+                "Conference": "SC",
+                "Record": "19-16",
+                "NetRating": 4.24,
+                "ORating": 113.9,
+                "ORank": 69,
+                "DRating": 109.7,
+                "DRank": 234,
+                "Tempo": 64.3,
+                "TempoRank": 333,
+                "SeedNum": 15.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Tennessee"
+          }
+        ],
+        "second_round": [
+          {
+            "team1": {
+              "name": "Norfolk St.",
+              "details": {
+                "Rank": 178,
+                "Team": "Norfolk St.",
+                "Seed": 16,
+                "Conference": "MEAC",
+                "Record": "24-11",
+                "NetRating": -1.63,
+                "ORating": 107.5,
+                "ORank": 156,
+                "DRating": 109.1,
+                "DRank": 222,
+                "Tempo": 66.5,
+                "TempoRank": 229,
+                "SeedNum": 16.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "Baylor",
+              "details": {
+                "Rank": 30,
+                "Team": "Baylor",
+                "Seed": 9,
+                "Conference": "B12",
+                "Record": "20-15",
+                "NetRating": 20.83,
+                "ORating": 121.3,
+                "ORank": 16,
+                "DRating": 100.4,
+                "DRank": 62,
+                "Tempo": 64.6,
+                "TempoRank": 328,
+                "SeedNum": 9.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Baylor"
+          },
+          {
+            "team1": {
+              "name": "Michigan",
+              "details": {
+                "Rank": 21,
+                "Team": "Michigan",
+                "Seed": 5,
+                "Conference": "B10",
+                "Record": "27-10",
+                "NetRating": 23.45,
+                "ORating": 116.5,
+                "ORank": 43,
+                "DRating": 93.1,
+                "DRank": 12,
+                "Tempo": 70.1,
+                "TempoRank": 54,
+                "SeedNum": 5.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "Yale",
+              "details": {
+                "Rank": 74,
+                "Team": "Yale",
+                "Seed": 13,
+                "Conference": "Ivy",
+                "Record": "22-8",
+                "NetRating": 11.02,
+                "ORating": 115.2,
+                "ORank": 59,
+                "DRating": 104.2,
+                "DRank": 115,
+                "Tempo": 67.7,
+                "TempoRank": 169,
+                "SeedNum": 13.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Yale"
+          },
+          {
+            "team1": {
+              "name": "Illinois",
+              "details": {
+                "Rank": 17,
+                "Team": "Illinois",
+                "Seed": 6,
+                "Conference": "B10",
+                "Record": "22-13",
+                "NetRating": 24.32,
+                "ORating": 121.9,
+                "ORank": 14,
+                "DRating": 97.6,
+                "DRank": 40,
+                "Tempo": 71.5,
+                "TempoRank": 17,
+                "SeedNum": 6.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "Texas Tech",
+              "details": {
+                "Rank": 9,
+                "Team": "Texas Tech",
+                "Seed": 3,
+                "Conference": "B12",
+                "Record": "28-9",
+                "NetRating": 27.92,
+                "ORating": 125.4,
+                "ORank": 5,
+                "DRating": 97.5,
+                "DRank": 39,
+                "Tempo": 66.1,
+                "TempoRank": 264,
+                "SeedNum": 3.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Illinois"
+          },
+          {
+            "team1": {
+              "name": "Arkansas",
+              "details": {
+                "Rank": 36,
+                "Team": "Arkansas",
+                "Seed": 10,
+                "Conference": "SEC",
+                "Record": "22-14",
+                "NetRating": 19.33,
+                "ORating": 114.4,
+                "ORank": 64,
+                "DRating": 95.1,
+                "DRank": 18,
+                "Tempo": 69.4,
+                "TempoRank": 69,
+                "SeedNum": 10.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "Tennessee",
+              "details": {
+                "Rank": 5,
+                "Team": "Tennessee",
+                "Seed": 2,
+                "Conference": "SEC",
+                "Record": "30-8",
+                "NetRating": 30.93,
+                "ORating": 120.7,
+                "ORank": 17,
+                "DRating": 89.7,
+                "DRank": 3,
+                "Tempo": 63.7,
+                "TempoRank": 349,
+                "SeedNum": 2.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Arkansas"
+          }
+        ],
+        "sweet_sixteen": [
+          {
+            "team1": {
+              "name": "Baylor",
+              "details": {
+                "Rank": 30,
+                "Team": "Baylor",
+                "Seed": 9,
+                "Conference": "B12",
+                "Record": "20-15",
+                "NetRating": 20.83,
+                "ORating": 121.3,
+                "ORank": 16,
+                "DRating": 100.4,
+                "DRank": 62,
+                "Tempo": 64.6,
+                "TempoRank": 328,
+                "SeedNum": 9.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "Yale",
+              "details": {
+                "Rank": 74,
+                "Team": "Yale",
+                "Seed": 13,
+                "Conference": "Ivy",
+                "Record": "22-8",
+                "NetRating": 11.02,
+                "ORating": 115.2,
+                "ORank": 59,
+                "DRating": 104.2,
+                "DRank": 115,
+                "Tempo": 67.7,
+                "TempoRank": 169,
+                "SeedNum": 13.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Yale"
+          },
+          {
+            "team1": {
+              "name": "Illinois",
+              "details": {
+                "Rank": 17,
+                "Team": "Illinois",
+                "Seed": 6,
+                "Conference": "B10",
+                "Record": "22-13",
+                "NetRating": 24.32,
+                "ORating": 121.9,
+                "ORank": 14,
+                "DRating": 97.6,
+                "DRank": 40,
+                "Tempo": 71.5,
+                "TempoRank": 17,
+                "SeedNum": 6.0,
+                "Region": "East"
+              }
+            },
+            "team2": {
+              "name": "Arkansas",
+              "details": {
+                "Rank": 36,
+                "Team": "Arkansas",
+                "Seed": 10,
+                "Conference": "SEC",
+                "Record": "22-14",
+                "NetRating": 19.33,
+                "ORating": 114.4,
+                "ORank": 64,
+                "DRating": 95.1,
+                "DRank": 18,
+                "Tempo": 69.4,
+                "TempoRank": 69,
+                "SeedNum": 10.0,
+                "Region": "East"
+              }
+            },
+            "winner": "Illinois"
+          }
+        ],
+        "elite_eight": {
+          "team1": {
+            "name": "Yale",
+            "details": {
+              "Rank": 74,
+              "Team": "Yale",
+              "Seed": 13,
+              "Conference": "Ivy",
+              "Record": "22-8",
+              "NetRating": 11.02,
+              "ORating": 115.2,
+              "ORank": 59,
+              "DRating": 104.2,
+              "DRank": 115,
+              "Tempo": 67.7,
+              "TempoRank": 169,
+              "SeedNum": 13.0,
+              "Region": "East"
+            }
+          },
+          "team2": {
+            "name": "Illinois",
+            "details": {
+              "Rank": 17,
+              "Team": "Illinois",
+              "Seed": 6,
+              "Conference": "B10",
+              "Record": "22-13",
+              "NetRating": 24.32,
+              "ORating": 121.9,
+              "ORank": 14,
+              "DRating": 97.6,
+              "DRank": 40,
+              "Tempo": 71.5,
+              "TempoRank": 17,
+              "SeedNum": 6.0,
+              "Region": "East"
+            }
+          },
+          "winner": "Yale"
+        },
+        "regional_champion": "Yale"
+      },
+      "Midwest": {
+        "first_round": [
+          {
+            "team1": {
+              "name": "Auburn",
+              "details": {
+                "Rank": 4,
+                "Team": "Auburn",
+                "Seed": 1,
+                "Conference": "SEC",
+                "Record": "32-6",
+                "NetRating": 35.05,
+                "ORating": 127.2,
+                "ORank": 3,
+                "DRating": 92.1,
+                "DRank": 9,
+                "Tempo": 68.2,
+                "TempoRank": 134,
+                "SeedNum": 1.0,
+                "Region": "Midwest"
+              }
+            },
+            "team2": {
+              "name": "SIUE",
+              "details": {
+                "Rank": 217,
+                "Team": "SIUE",
+                "Seed": 16,
+                "Conference": "OVC",
+                "Record": "22-12",
+                "NetRating": -4.5,
+                "ORating": 101.8,
+                "ORank": 261,
+                "DRating": 106.3,
+                "DRank": 158,
+                "Tempo": 66.2,
+                "TempoRank": 254,
+                "SeedNum": 16.0,
+                "Region": "West"
+              }
+            },
+            "winner": "SIUE"
+          },
+          {
+            "team1": {
+              "name": "Mississippi St.",
+              "details": {
+                "Rank": 33,
+                "Team": "Mississippi St.",
+                "Seed": 8,
+                "Conference": "SEC",
+                "Record": "21-13",
+                "NetRating": 20.02,
+                "ORating": 118.9,
+                "ORank": 24,
+                "DRating": 98.8,
+                "DRank": 46,
+                "Tempo": 68.3,
+                "TempoRank": 127,
+                "SeedNum": 8.0,
+                "Region": "Midwest"
+              }
+            },
+            "team2": {
+              "name": "Oklahoma",
+              "details": {
+                "Rank": 40,
+                "Team": "Oklahoma",
+                "Seed": 9,
+                "Conference": "SEC",
+                "Record": "20-14",
+                "NetRating": 17.95,
+                "ORating": 118.2,
+                "ORank": 29,
+                "DRating": 100.3,
+                "DRank": 60,
+                "Tempo": 68.8,
+                "TempoRank": 108,
+                "SeedNum": 9.0,
+                "Region": "Midwest"
+              }
+            },
+            "winner": "Oklahoma"
+          },
+          {
+            "team1": {
+              "name": "Memphis",
+              "details": {
+                "Rank": 54,
+                "Team": "Memphis",
+                "Seed": 5,
+                "Conference": "Amer",
+                "Record": "29-6",
+                "NetRating": 15.1,
+                "ORating": 113.4,
+                "ORank": 73,
+                "DRating": 98.3,
+                "DRank": 43,
+                "Tempo": 71.0,
+                "TempoRank": 27,
+                "SeedNum": 5.0,
+                "Region": "Midwest"
+              }
+            },
+            "team2": {
+              "name": "Liberty",
+              "details": {
+                "Rank": 64,
+                "Team": "Liberty",
+                "Seed": 12,
+                "Conference": "CUSA",
+                "Record": "28-7",
+                "NetRating": 12.46,
+                "ORating": 111.8,
+                "ORank": 90,
+                "DRating": 99.4,
+                "DRank": 54,
+                "Tempo": 65.6,
+                "TempoRank": 285,
+                "SeedNum": 12.0,
+                "Region": "Midwest"
+              }
+            },
+            "winner": "Liberty"
+          },
+          {
+            "team1": {
+              "name": "Texas A&M",
+              "details": {
+                "Rank": 18,
+                "Team": "Texas A&M",
+                "Seed": 4,
+                "Conference": "SEC",
+                "Record": "23-11",
+                "NetRating": 23.66,
+                "ORating": 116.5,
+                "ORank": 42,
+                "DRating": 92.9,
+                "DRank": 10,
+                "Tempo": 66.8,
+                "TempoRank": 215,
+                "SeedNum": 4.0,
+                "Region": "Midwest"
+              }
+            },
+            "team2": {
+              "name": "Grand Canyon",
+              "details": {
+                "Rank": 101,
+                "Team": "Grand Canyon",
+                "Seed": 13,
+                "Conference": "WAC",
+                "Record": "26-8",
+                "NetRating": 6.29,
+                "ORating": 107.4,
+                "ORank": 163,
+                "DRating": 101.1,
+                "DRank": 71,
+                "Tempo": 71.4,
+                "TempoRank": 19,
+                "SeedNum": 13.0,
+                "Region": "Midwest"
+              }
+            },
+            "winner": "Texas A&M"
+          },
+          {
+            "team1": {
+              "name": "BYU",
+              "details": {
+                "Rank": 26,
+                "Team": "BYU",
+                "Seed": 6,
+                "Conference": "B12",
+                "Record": "26-10",
+                "NetRating": 22.31,
+                "ORating": 124.1,
+                "ORank": 9,
+                "DRating": 101.8,
+                "DRank": 82,
+                "Tempo": 67.6,
+                "TempoRank": 170,
+                "SeedNum": 6.0,
+                "Region": "Midwest"
+              }
+            },
+            "team2": {
+              "name": "Texas",
+              "details": {
+                "Rank": 47,
+                "Team": "Texas",
+                "Seed": 11,
+                "Conference": "SEC",
+                "Record": "19-16",
+                "NetRating": 16.9,
+                "ORating": 117.3,
+                "ORank": 36,
+                "DRating": 100.4,
+                "DRank": 61,
+                "Tempo": 67.6,
+                "TempoRank": 176,
+                "SeedNum": 11.0,
+                "Region": "Midwest"
+              }
+            },
+            "winner": "Texas"
+          },
+          {
+            "team1": {
+              "name": "Kentucky",
+              "details": {
+                "Rank": 16,
+                "Team": "Kentucky",
+                "Seed": 3,
+                "Conference": "SEC",
+                "Record": "24-12",
+                "NetRating": 24.54,
+                "ORating": 123.7,
+                "ORank": 10,
+                "DRating": 99.2,
+                "DRank": 51,
+                "Tempo": 70.9,
+                "TempoRank": 30,
+                "SeedNum": 3.0,
+                "Region": "Midwest"
+              }
+            },
+            "team2": {
+              "name": "Montana",
+              "details": {
+                "Rank": 163,
+                "Team": "Montana",
+                "Seed": 14,
+                "Conference": "BSky",
+                "Record": "25-10",
+                "NetRating": 0.07,
+                "ORating": 110.6,
+                "ORank": 99,
+                "DRating": 110.6,
+                "DRank": 251,
+                "Tempo": 67.3,
+                "TempoRank": 193,
+                "SeedNum": 14.0,
+                "Region": "Midwest"
+              }
+            },
+            "winner": "Kentucky"
+          },
+          {
+            "team1": {
+              "name": "Marquette",
+              "details": {
+                "Rank": 29,
+                "Team": "Marquette",
+                "Seed": 7,
+                "Conference": "BE",
+                "Record": "23-11",
+                "NetRating": 21.01,
+                "ORating": 117.4,
+                "ORank": 35,
+                "DRating": 96.4,
+                "DRank": 26,
+                "Tempo": 67.7,
+                "TempoRank": 166,
+                "SeedNum": 7.0,
+                "Region": "Midwest"
+              }
+            },
+            "team2": {
+              "name": "Utah St.",
+              "details": {
+                "Rank": 61,
+                "Team": "Utah St.",
+                "Seed": 10,
+                "Conference": "MWC",
+                "Record": "26-8",
+                "NetRating": 14.0,
+                "ORating": 119.8,
+                "ORank": 20,
+                "DRating": 105.8,
+                "DRank": 150,
+                "Tempo": 67.6,
+                "TempoRank": 172,
+                "SeedNum": 10.0,
+                "Region": "Midwest"
+              }
+            },
+            "winner": "Utah St."
+          },
+          {
+            "team1": {
+              "name": "St. John's",
+              "details": {
+                "Rank": 14,
+                "Team": "St. John's",
+                "Seed": 2,
+                "Conference": "BE",
+                "Record": "31-5",
+                "NetRating": 26.06,
+                "ORating": 114.0,
+                "ORank": 68,
+                "DRating": 88.0,
+                "DRank": 2,
+                "Tempo": 70.0,
+                "TempoRank": 58,
+                "SeedNum": 2.0,
+                "Region": "Midwest"
+              }
+            },
+            "team2": {
+              "name": "Nebraska Omaha",
+              "details": {
+                "Rank": 165,
+                "Team": "Nebraska Omaha",
+                "Seed": 15,
+                "Conference": "Sum",
+                "Record": "22-13",
+                "NetRating": -0.06,
+                "ORating": 111.0,
+                "ORank": 97,
+                "DRating": 111.1,
+                "DRank": 259,
+                "Tempo": 67.7,
+                "TempoRank": 163,
+                "SeedNum": 15.0,
+                "Region": "Midwest"
+              }
+            },
+            "winner": "Nebraska Omaha"
+          }
+        ],
+        "second_round": [
+          {
+            "team1": {
+              "name": "SIUE",
+              "details": {
+                "Rank": 217,
+                "Team": "SIUE",
+                "Seed": 16,
+                "Conference": "OVC",
+                "Record": "22-12",
+                "NetRating": -4.5,
+                "ORating": 101.8,
+                "ORank": 261,
+                "DRating": 106.3,
+                "DRank": 158,
+                "Tempo": 66.2,
+                "TempoRank": 254,
+                "SeedNum": 16.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "Oklahoma",
+              "details": {
+                "Rank": 40,
+                "Team": "Oklahoma",
+                "Seed": 9,
+                "Conference": "SEC",
+                "Record": "20-14",
+                "NetRating": 17.95,
+                "ORating": 118.2,
+                "ORank": 29,
+                "DRating": 100.3,
+                "DRank": 60,
+                "Tempo": 68.8,
+                "TempoRank": 108,
+                "SeedNum": 9.0,
+                "Region": "Midwest"
+              }
+            },
+            "winner": "Oklahoma"
+          },
+          {
+            "team1": {
+              "name": "Liberty",
+              "details": {
+                "Rank": 64,
+                "Team": "Liberty",
+                "Seed": 12,
+                "Conference": "CUSA",
+                "Record": "28-7",
+                "NetRating": 12.46,
+                "ORating": 111.8,
+                "ORank": 90,
+                "DRating": 99.4,
+                "DRank": 54,
+                "Tempo": 65.6,
+                "TempoRank": 285,
+                "SeedNum": 12.0,
+                "Region": "Midwest"
+              }
+            },
+            "team2": {
+              "name": "Texas A&M",
+              "details": {
+                "Rank": 18,
+                "Team": "Texas A&M",
+                "Seed": 4,
+                "Conference": "SEC",
+                "Record": "23-11",
+                "NetRating": 23.66,
+                "ORating": 116.5,
+                "ORank": 42,
+                "DRating": 92.9,
+                "DRank": 10,
+                "Tempo": 66.8,
+                "TempoRank": 215,
+                "SeedNum": 4.0,
+                "Region": "Midwest"
+              }
+            },
+            "winner": "Texas A&M"
+          },
+          {
+            "team1": {
+              "name": "Texas",
+              "details": {
+                "Rank": 47,
+                "Team": "Texas",
+                "Seed": 11,
+                "Conference": "SEC",
+                "Record": "19-16",
+                "NetRating": 16.9,
+                "ORating": 117.3,
+                "ORank": 36,
+                "DRating": 100.4,
+                "DRank": 61,
+                "Tempo": 67.6,
+                "TempoRank": 176,
+                "SeedNum": 11.0,
+                "Region": "Midwest"
+              }
+            },
+            "team2": {
+              "name": "Kentucky",
+              "details": {
+                "Rank": 16,
+                "Team": "Kentucky",
+                "Seed": 3,
+                "Conference": "SEC",
+                "Record": "24-12",
+                "NetRating": 24.54,
+                "ORating": 123.7,
+                "ORank": 10,
+                "DRating": 99.2,
+                "DRank": 51,
+                "Tempo": 70.9,
+                "TempoRank": 30,
+                "SeedNum": 3.0,
+                "Region": "Midwest"
+              }
+            },
+            "winner": "Kentucky"
+          },
+          {
+            "team1": {
+              "name": "Utah St.",
+              "details": {
+                "Rank": 61,
+                "Team": "Utah St.",
+                "Seed": 10,
+                "Conference": "MWC",
+                "Record": "26-8",
+                "NetRating": 14.0,
+                "ORating": 119.8,
+                "ORank": 20,
+                "DRating": 105.8,
+                "DRank": 150,
+                "Tempo": 67.6,
+                "TempoRank": 172,
+                "SeedNum": 10.0,
+                "Region": "Midwest"
+              }
+            },
+            "team2": {
+              "name": "Nebraska Omaha",
+              "details": {
+                "Rank": 165,
+                "Team": "Nebraska Omaha",
+                "Seed": 15,
+                "Conference": "Sum",
+                "Record": "22-13",
+                "NetRating": -0.06,
+                "ORating": 111.0,
+                "ORank": 97,
+                "DRating": 111.1,
+                "DRank": 259,
+                "Tempo": 67.7,
+                "TempoRank": 163,
+                "SeedNum": 15.0,
+                "Region": "Midwest"
+              }
+            },
+            "winner": "Nebraska Omaha"
+          }
+        ],
+        "sweet_sixteen": [
+          {
+            "team1": {
+              "name": "Oklahoma",
+              "details": {
+                "Rank": 40,
+                "Team": "Oklahoma",
+                "Seed": 9,
+                "Conference": "SEC",
+                "Record": "20-14",
+                "NetRating": 17.95,
+                "ORating": 118.2,
+                "ORank": 29,
+                "DRating": 100.3,
+                "DRank": 60,
+                "Tempo": 68.8,
+                "TempoRank": 108,
+                "SeedNum": 9.0,
+                "Region": "Midwest"
+              }
+            },
+            "team2": {
+              "name": "Texas A&M",
+              "details": {
+                "Rank": 18,
+                "Team": "Texas A&M",
+                "Seed": 4,
+                "Conference": "SEC",
+                "Record": "23-11",
+                "NetRating": 23.66,
+                "ORating": 116.5,
+                "ORank": 42,
+                "DRating": 92.9,
+                "DRank": 10,
+                "Tempo": 66.8,
+                "TempoRank": 215,
+                "SeedNum": 4.0,
+                "Region": "Midwest"
+              }
+            },
+            "winner": "Texas A&M"
+          },
+          {
+            "team1": {
+              "name": "Kentucky",
+              "details": {
+                "Rank": 16,
+                "Team": "Kentucky",
+                "Seed": 3,
+                "Conference": "SEC",
+                "Record": "24-12",
+                "NetRating": 24.54,
+                "ORating": 123.7,
+                "ORank": 10,
+                "DRating": 99.2,
+                "DRank": 51,
+                "Tempo": 70.9,
+                "TempoRank": 30,
+                "SeedNum": 3.0,
+                "Region": "Midwest"
+              }
+            },
+            "team2": {
+              "name": "Nebraska Omaha",
+              "details": {
+                "Rank": 165,
+                "Team": "Nebraska Omaha",
+                "Seed": 15,
+                "Conference": "Sum",
+                "Record": "22-13",
+                "NetRating": -0.06,
+                "ORating": 111.0,
+                "ORank": 97,
+                "DRating": 111.1,
+                "DRank": 259,
+                "Tempo": 67.7,
+                "TempoRank": 163,
+                "SeedNum": 15.0,
+                "Region": "Midwest"
+              }
+            },
+            "winner": "Kentucky"
+          }
+        ],
+        "elite_eight": {
+          "team1": {
+            "name": "Texas A&M",
+            "details": {
+              "Rank": 18,
+              "Team": "Texas A&M",
+              "Seed": 4,
+              "Conference": "SEC",
+              "Record": "23-11",
+              "NetRating": 23.66,
+              "ORating": 116.5,
+              "ORank": 42,
+              "DRating": 92.9,
+              "DRank": 10,
+              "Tempo": 66.8,
+              "TempoRank": 215,
+              "SeedNum": 4.0,
+              "Region": "Midwest"
+            }
+          },
+          "team2": {
+            "name": "Kentucky",
+            "details": {
+              "Rank": 16,
+              "Team": "Kentucky",
+              "Seed": 3,
+              "Conference": "SEC",
+              "Record": "24-12",
+              "NetRating": 24.54,
+              "ORating": 123.7,
+              "ORank": 10,
+              "DRating": 99.2,
+              "DRank": 51,
+              "Tempo": 70.9,
+              "TempoRank": 30,
+              "SeedNum": 3.0,
+              "Region": "Midwest"
+            }
+          },
+          "winner": "Texas A&M"
+        },
+        "regional_champion": "Texas A&M"
+      },
+      "South": {
+        "first_round": [
+          {
+            "team1": {
+              "name": "Florida",
+              "details": {
+                "Rank": 3,
+                "Team": "Florida",
+                "Seed": 1,
+                "Conference": "SEC",
+                "Record": "36-4",
+                "NetRating": 36.46,
+                "ORating": 128.2,
+                "ORank": 2,
+                "DRating": 91.8,
+                "DRank": 6,
+                "Tempo": 70.1,
+                "TempoRank": 57,
+                "SeedNum": 1.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "SIUE",
+              "details": {
+                "Rank": 217,
+                "Team": "SIUE",
+                "Seed": 16,
+                "Conference": "OVC",
+                "Record": "22-12",
+                "NetRating": -4.5,
+                "ORating": 101.8,
+                "ORank": 261,
+                "DRating": 106.3,
+                "DRank": 158,
+                "Tempo": 66.2,
+                "TempoRank": 254,
+                "SeedNum": 16.0,
+                "Region": "West"
+              }
+            },
+            "winner": "Florida"
+          },
+          {
+            "team1": {
+              "name": "Connecticut",
+              "details": {
+                "Rank": 32,
+                "Team": "Connecticut",
+                "Seed": 8,
+                "Conference": "BE",
+                "Record": "24-11",
+                "NetRating": 20.18,
+                "ORating": 121.6,
+                "ORank": 15,
+                "DRating": 101.4,
+                "DRank": 75,
+                "Tempo": 64.0,
+                "TempoRank": 343,
+                "SeedNum": 8.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "Georgia",
+              "details": {
+                "Rank": 38,
+                "Team": "Georgia",
+                "Seed": 9,
+                "Conference": "SEC",
+                "Record": "20-13",
+                "NetRating": 18.57,
+                "ORating": 115.3,
+                "ORank": 57,
+                "DRating": 96.8,
+                "DRank": 32,
+                "Tempo": 66.7,
+                "TempoRank": 219,
+                "SeedNum": 9.0,
+                "Region": "South"
+              }
+            },
+            "winner": "Connecticut"
+          },
+          {
+            "team1": {
+              "name": "Oregon",
+              "details": {
+                "Rank": 27,
+                "Team": "Oregon",
+                "Seed": 5,
+                "Conference": "B10",
+                "Record": "25-10",
+                "NetRating": 21.85,
+                "ORating": 117.6,
+                "ORank": 34,
+                "DRating": 95.8,
+                "DRank": 21,
+                "Tempo": 68.1,
+                "TempoRank": 141,
+                "SeedNum": 5.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "McNeese",
+              "details": {
+                "Rank": 60,
+                "Team": "McNeese",
+                "Seed": 12,
+                "Conference": "Slnd",
+                "Record": "28-7",
+                "NetRating": 14.24,
+                "ORating": 114.1,
+                "ORank": 67,
+                "DRating": 99.8,
+                "DRank": 57,
+                "Tempo": 65.9,
+                "TempoRank": 275,
+                "SeedNum": 12.0,
+                "Region": "South"
+              }
+            },
+            "winner": "Oregon"
+          },
+          {
+            "team1": {
+              "name": "Purdue",
+              "details": {
+                "Rank": 15,
+                "Team": "Purdue",
+                "Seed": 4,
+                "Conference": "B10",
+                "Record": "24-12",
+                "NetRating": 25.36,
+                "ORating": 124.6,
+                "ORank": 7,
+                "DRating": 99.2,
+                "DRank": 53,
+                "Tempo": 65.1,
+                "TempoRank": 300,
+                "SeedNum": 4.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "Akron",
+              "details": {
+                "Rank": 100,
+                "Team": "Akron",
+                "Seed": 13,
+                "Conference": "MAC",
+                "Record": "28-7",
+                "NetRating": 6.47,
+                "ORating": 113.6,
+                "ORank": 71,
+                "DRating": 107.1,
+                "DRank": 182,
+                "Tempo": 71.7,
+                "TempoRank": 15,
+                "SeedNum": 13.0,
+                "Region": "South"
+              }
+            },
+            "winner": "Akron"
+          },
+          {
+            "team1": {
+              "name": "Mississippi",
+              "details": {
+                "Rank": 22,
+                "Team": "Mississippi",
+                "Seed": 6,
+                "Conference": "SEC",
+                "Record": "24-12",
+                "NetRating": 23.34,
+                "ORating": 119.1,
+                "ORank": 22,
+                "DRating": 95.8,
+                "DRank": 23,
+                "Tempo": 68.1,
+                "TempoRank": 143,
+                "SeedNum": 6.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "Xavier",
+              "details": {
+                "Rank": 43,
+                "Team": "Xavier",
+                "Seed": 11,
+                "Conference": "BE",
+                "Record": "22-12",
+                "NetRating": 17.19,
+                "ORating": 116.2,
+                "ORank": 47,
+                "DRating": 99.0,
+                "DRank": 48,
+                "Tempo": 69.2,
+                "TempoRank": 84,
+                "SeedNum": 11.0,
+                "Region": "South"
+              }
+            },
+            "winner": "Xavier"
+          },
+          {
+            "team1": {
+              "name": "Wisconsin",
+              "details": {
+                "Rank": 12,
+                "Team": "Wisconsin",
+                "Seed": 3,
+                "Conference": "B10",
+                "Record": "27-10",
+                "NetRating": 26.57,
+                "ORating": 122.9,
+                "ORank": 13,
+                "DRating": 96.3,
+                "DRank": 24,
+                "Tempo": 68.0,
+                "TempoRank": 149,
+                "SeedNum": 3.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "UNC Wilmington",
+              "details": {
+                "Rank": 105,
+                "Team": "UNC Wilmington",
+                "Seed": 14,
+                "Conference": "CAA",
+                "Record": "27-8",
+                "NetRating": 5.28,
+                "ORating": 112.2,
+                "ORank": 85,
+                "DRating": 106.9,
+                "DRank": 177,
+                "Tempo": 65.9,
+                "TempoRank": 276,
+                "SeedNum": 14.0,
+                "Region": "South"
+              }
+            },
+            "winner": "Wisconsin"
+          },
+          {
+            "team1": {
+              "name": "Saint Mary's",
+              "details": {
+                "Rank": 25,
+                "Team": "Saint Mary's",
+                "Seed": 7,
+                "Conference": "WCC",
+                "Record": "29-6",
+                "NetRating": 22.73,
+                "ORating": 114.7,
+                "ORank": 63,
+                "DRating": 92.0,
+                "DRank": 8,
+                "Tempo": 61.7,
+                "TempoRank": 360,
+                "SeedNum": 7.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "Vanderbilt",
+              "details": {
+                "Rank": 48,
+                "Team": "Vanderbilt",
+                "Seed": 10,
+                "Conference": "SEC",
+                "Record": "20-13",
+                "NetRating": 16.23,
+                "ORating": 117.8,
+                "ORank": 32,
+                "DRating": 101.6,
+                "DRank": 79,
+                "Tempo": 69.5,
+                "TempoRank": 68,
+                "SeedNum": 10.0,
+                "Region": "South"
+              }
+            },
+            "winner": "Vanderbilt"
+          },
+          {
+            "team1": {
+              "name": "Michigan St.",
+              "details": {
+                "Rank": 7,
+                "Team": "Michigan St.",
+                "Seed": 2,
+                "Conference": "B10",
+                "Record": "30-7",
+                "NetRating": 28.48,
+                "ORating": 118.8,
+                "ORank": 25,
+                "DRating": 90.4,
+                "DRank": 4,
+                "Tempo": 67.5,
+                "TempoRank": 183,
+                "SeedNum": 2.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "Bryant",
+              "details": {
+                "Rank": 149,
+                "Team": "Bryant",
+                "Seed": 15,
+                "Conference": "AE",
+                "Record": "23-12",
+                "NetRating": 0.92,
+                "ORating": 106.8,
+                "ORank": 180,
+                "DRating": 105.8,
+                "DRank": 151,
+                "Tempo": 72.7,
+                "TempoRank": 6,
+                "SeedNum": 15.0,
+                "Region": "South"
+              }
+            },
+            "winner": "Bryant"
+          }
+        ],
+        "second_round": [
+          {
+            "team1": {
+              "name": "Florida",
+              "details": {
+                "Rank": 3,
+                "Team": "Florida",
+                "Seed": 1,
+                "Conference": "SEC",
+                "Record": "36-4",
+                "NetRating": 36.46,
+                "ORating": 128.2,
+                "ORank": 2,
+                "DRating": 91.8,
+                "DRank": 6,
+                "Tempo": 70.1,
+                "TempoRank": 57,
+                "SeedNum": 1.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "Connecticut",
+              "details": {
+                "Rank": 32,
+                "Team": "Connecticut",
+                "Seed": 8,
+                "Conference": "BE",
+                "Record": "24-11",
+                "NetRating": 20.18,
+                "ORating": 121.6,
+                "ORank": 15,
+                "DRating": 101.4,
+                "DRank": 75,
+                "Tempo": 64.0,
+                "TempoRank": 343,
+                "SeedNum": 8.0,
+                "Region": "South"
+              }
+            },
+            "winner": "Connecticut"
+          },
+          {
+            "team1": {
+              "name": "Oregon",
+              "details": {
+                "Rank": 27,
+                "Team": "Oregon",
+                "Seed": 5,
+                "Conference": "B10",
+                "Record": "25-10",
+                "NetRating": 21.85,
+                "ORating": 117.6,
+                "ORank": 34,
+                "DRating": 95.8,
+                "DRank": 21,
+                "Tempo": 68.1,
+                "TempoRank": 141,
+                "SeedNum": 5.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "Akron",
+              "details": {
+                "Rank": 100,
+                "Team": "Akron",
+                "Seed": 13,
+                "Conference": "MAC",
+                "Record": "28-7",
+                "NetRating": 6.47,
+                "ORating": 113.6,
+                "ORank": 71,
+                "DRating": 107.1,
+                "DRank": 182,
+                "Tempo": 71.7,
+                "TempoRank": 15,
+                "SeedNum": 13.0,
+                "Region": "South"
+              }
+            },
+            "winner": "Oregon"
+          },
+          {
+            "team1": {
+              "name": "Xavier",
+              "details": {
+                "Rank": 43,
+                "Team": "Xavier",
+                "Seed": 11,
+                "Conference": "BE",
+                "Record": "22-12",
+                "NetRating": 17.19,
+                "ORating": 116.2,
+                "ORank": 47,
+                "DRating": 99.0,
+                "DRank": 48,
+                "Tempo": 69.2,
+                "TempoRank": 84,
+                "SeedNum": 11.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "Wisconsin",
+              "details": {
+                "Rank": 12,
+                "Team": "Wisconsin",
+                "Seed": 3,
+                "Conference": "B10",
+                "Record": "27-10",
+                "NetRating": 26.57,
+                "ORating": 122.9,
+                "ORank": 13,
+                "DRating": 96.3,
+                "DRank": 24,
+                "Tempo": 68.0,
+                "TempoRank": 149,
+                "SeedNum": 3.0,
+                "Region": "South"
+              }
+            },
+            "winner": "Xavier"
+          },
+          {
+            "team1": {
+              "name": "Vanderbilt",
+              "details": {
+                "Rank": 48,
+                "Team": "Vanderbilt",
+                "Seed": 10,
+                "Conference": "SEC",
+                "Record": "20-13",
+                "NetRating": 16.23,
+                "ORating": 117.8,
+                "ORank": 32,
+                "DRating": 101.6,
+                "DRank": 79,
+                "Tempo": 69.5,
+                "TempoRank": 68,
+                "SeedNum": 10.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "Bryant",
+              "details": {
+                "Rank": 149,
+                "Team": "Bryant",
+                "Seed": 15,
+                "Conference": "AE",
+                "Record": "23-12",
+                "NetRating": 0.92,
+                "ORating": 106.8,
+                "ORank": 180,
+                "DRating": 105.8,
+                "DRank": 151,
+                "Tempo": 72.7,
+                "TempoRank": 6,
+                "SeedNum": 15.0,
+                "Region": "South"
+              }
+            },
+            "winner": "Bryant"
+          }
+        ],
+        "sweet_sixteen": [
+          {
+            "team1": {
+              "name": "Connecticut",
+              "details": {
+                "Rank": 32,
+                "Team": "Connecticut",
+                "Seed": 8,
+                "Conference": "BE",
+                "Record": "24-11",
+                "NetRating": 20.18,
+                "ORating": 121.6,
+                "ORank": 15,
+                "DRating": 101.4,
+                "DRank": 75,
+                "Tempo": 64.0,
+                "TempoRank": 343,
+                "SeedNum": 8.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "Oregon",
+              "details": {
+                "Rank": 27,
+                "Team": "Oregon",
+                "Seed": 5,
+                "Conference": "B10",
+                "Record": "25-10",
+                "NetRating": 21.85,
+                "ORating": 117.6,
+                "ORank": 34,
+                "DRating": 95.8,
+                "DRank": 21,
+                "Tempo": 68.1,
+                "TempoRank": 141,
+                "SeedNum": 5.0,
+                "Region": "South"
+              }
+            },
+            "winner": "Oregon"
+          },
+          {
+            "team1": {
+              "name": "Xavier",
+              "details": {
+                "Rank": 43,
+                "Team": "Xavier",
+                "Seed": 11,
+                "Conference": "BE",
+                "Record": "22-12",
+                "NetRating": 17.19,
+                "ORating": 116.2,
+                "ORank": 47,
+                "DRating": 99.0,
+                "DRank": 48,
+                "Tempo": 69.2,
+                "TempoRank": 84,
+                "SeedNum": 11.0,
+                "Region": "South"
+              }
+            },
+            "team2": {
+              "name": "Bryant",
+              "details": {
+                "Rank": 149,
+                "Team": "Bryant",
+                "Seed": 15,
+                "Conference": "AE",
+                "Record": "23-12",
+                "NetRating": 0.92,
+                "ORating": 106.8,
+                "ORank": 180,
+                "DRating": 105.8,
+                "DRank": 151,
+                "Tempo": 72.7,
+                "TempoRank": 6,
+                "SeedNum": 15.0,
+                "Region": "South"
+              }
+            },
+            "winner": "Xavier"
+          }
+        ],
+        "elite_eight": {
+          "team1": {
+            "name": "Oregon",
+            "details": {
+              "Rank": 27,
+              "Team": "Oregon",
+              "Seed": 5,
+              "Conference": "B10",
+              "Record": "25-10",
+              "NetRating": 21.85,
+              "ORating": 117.6,
+              "ORank": 34,
+              "DRating": 95.8,
+              "DRank": 21,
+              "Tempo": 68.1,
+              "TempoRank": 141,
+              "SeedNum": 5.0,
+              "Region": "South"
+            }
+          },
+          "team2": {
+            "name": "Xavier",
+            "details": {
+              "Rank": 43,
+              "Team": "Xavier",
+              "Seed": 11,
+              "Conference": "BE",
+              "Record": "22-12",
+              "NetRating": 17.19,
+              "ORating": 116.2,
+              "ORank": 47,
+              "DRating": 99.0,
+              "DRank": 48,
+              "Tempo": 69.2,
+              "TempoRank": 84,
+              "SeedNum": 11.0,
+              "Region": "South"
+            }
+          },
+          "winner": "Xavier"
+        },
+        "regional_champion": "Xavier"
+      },
+      "West": {
+        "first_round": [
+          {
+            "team1": {
+              "name": "Houston",
+              "details": {
+                "Rank": 2,
+                "Team": "Houston",
+                "Seed": 1,
+                "Conference": "B12",
+                "Record": "35-5",
+                "NetRating": 36.59,
+                "ORating": 123.4,
+                "ORank": 12,
+                "DRating": 86.8,
+                "DRank": 1,
+                "Tempo": 61.9,
+                "TempoRank": 359,
+                "SeedNum": 1.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "SIUE",
+              "details": {
+                "Rank": 217,
+                "Team": "SIUE",
+                "Seed": 16,
+                "Conference": "OVC",
+                "Record": "22-12",
+                "NetRating": -4.5,
+                "ORating": 101.8,
+                "ORank": 261,
+                "DRating": 106.3,
+                "DRank": 158,
+                "Tempo": 66.2,
+                "TempoRank": 254,
+                "SeedNum": 16.0,
+                "Region": "West"
+              }
+            },
+            "winner": "SIUE"
+          },
+          {
+            "team1": {
+              "name": "Louisville",
+              "details": {
+                "Rank": 28,
+                "Team": "Louisville",
+                "Seed": 8,
+                "Conference": "ACC",
+                "Record": "27-8",
+                "NetRating": 21.73,
+                "ORating": 118.1,
+                "ORank": 31,
+                "DRating": 96.3,
+                "DRank": 25,
+                "Tempo": 69.1,
+                "TempoRank": 90,
+                "SeedNum": 8.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "Creighton",
+              "details": {
+                "Rank": 35,
+                "Team": "Creighton",
+                "Seed": 9,
+                "Conference": "BE",
+                "Record": "25-11",
+                "NetRating": 19.44,
+                "ORating": 117.8,
+                "ORank": 33,
+                "DRating": 98.3,
+                "DRank": 44,
+                "Tempo": 67.3,
+                "TempoRank": 192,
+                "SeedNum": 9.0,
+                "Region": "West"
+              }
+            },
+            "winner": "Creighton"
+          },
+          {
+            "team1": {
+              "name": "Clemson",
+              "details": {
+                "Rank": 23,
+                "Team": "Clemson",
+                "Seed": 5,
+                "Conference": "ACC",
+                "Record": "27-7",
+                "NetRating": 23.22,
+                "ORating": 118.2,
+                "ORank": 28,
+                "DRating": 95.0,
+                "DRank": 17,
+                "Tempo": 64.6,
+                "TempoRank": 327,
+                "SeedNum": 5.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "Colorado St.",
+              "details": {
+                "Rank": 42,
+                "Team": "Colorado St.",
+                "Seed": 12,
+                "Conference": "MWC",
+                "Record": "26-10",
+                "NetRating": 17.61,
+                "ORating": 116.8,
+                "ORank": 40,
+                "DRating": 99.2,
+                "DRank": 52,
+                "Tempo": 66.0,
+                "TempoRank": 270,
+                "SeedNum": 12.0,
+                "Region": "West"
+              }
+            },
+            "winner": "Colorado St."
+          },
+          {
+            "team1": {
+              "name": "Arizona",
+              "details": {
+                "Rank": 13,
+                "Team": "Arizona",
+                "Seed": 4,
+                "Conference": "B12",
+                "Record": "24-13",
+                "NetRating": 26.35,
+                "ORating": 123.7,
+                "ORank": 11,
+                "DRating": 97.3,
+                "DRank": 38,
+                "Tempo": 70.3,
+                "TempoRank": 49,
+                "SeedNum": 4.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "High Point",
+              "details": {
+                "Rank": 82,
+                "Team": "High Point",
+                "Seed": 13,
+                "Conference": "BSth",
+                "Record": "29-6",
+                "NetRating": 9.15,
+                "ORating": 118.4,
+                "ORank": 27,
+                "DRating": 109.2,
+                "DRank": 226,
+                "Tempo": 66.5,
+                "TempoRank": 230,
+                "SeedNum": 13.0,
+                "Region": "West"
+              }
+            },
+            "winner": "High Point"
+          },
+          {
+            "team1": {
+              "name": "Missouri",
+              "details": {
+                "Rank": 19,
+                "Team": "Missouri",
+                "Seed": 6,
+                "Conference": "SEC",
+                "Record": "22-12",
+                "NetRating": 23.57,
+                "ORating": 124.4,
+                "ORank": 8,
+                "DRating": 100.8,
+                "DRank": 68,
+                "Tempo": 68.6,
+                "TempoRank": 113,
+                "SeedNum": 6.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "VCU",
+              "details": {
+                "Rank": 34,
+                "Team": "VCU",
+                "Seed": 11,
+                "Conference": "A10",
+                "Record": "28-7",
+                "NetRating": 19.53,
+                "ORating": 116.0,
+                "ORank": 51,
+                "DRating": 96.5,
+                "DRank": 27,
+                "Tempo": 66.3,
+                "TempoRank": 246,
+                "SeedNum": 11.0,
+                "Region": "West"
+              }
+            },
+            "winner": "Missouri"
+          },
+          {
+            "team1": {
+              "name": "Iowa St.",
+              "details": {
+                "Rank": 11,
+                "Team": "Iowa St.",
+                "Seed": 3,
+                "Conference": "B12",
+                "Record": "25-10",
+                "NetRating": 26.65,
+                "ORating": 119.8,
+                "ORank": 19,
+                "DRating": 93.2,
+                "DRank": 13,
+                "Tempo": 68.8,
+                "TempoRank": 109,
+                "SeedNum": 3.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "Troy",
+              "details": {
+                "Rank": 95,
+                "Team": "Troy",
+                "Seed": 14,
+                "Conference": "SB",
+                "Record": "23-11",
+                "NetRating": 6.95,
+                "ORating": 107.4,
+                "ORank": 162,
+                "DRating": 100.4,
+                "DRank": 63,
+                "Tempo": 66.5,
+                "TempoRank": 231,
+                "SeedNum": 14.0,
+                "Region": "West"
+              }
+            },
+            "winner": "Iowa St."
+          },
+          {
+            "team1": {
+              "name": "Kansas",
+              "details": {
+                "Rank": 24,
+                "Team": "Kansas",
+                "Seed": 7,
+                "Conference": "B12",
+                "Record": "21-13",
+                "NetRating": 22.94,
+                "ORating": 115.9,
+                "ORank": 52,
+                "DRating": 93.0,
+                "DRank": 11,
+                "Tempo": 68.6,
+                "TempoRank": 114,
+                "SeedNum": 7.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "New Mexico",
+              "details": {
+                "Rank": 41,
+                "Team": "New Mexico",
+                "Seed": 10,
+                "Conference": "MWC",
+                "Record": "27-8",
+                "NetRating": 17.78,
+                "ORating": 112.9,
+                "ORank": 74,
+                "DRating": 95.1,
+                "DRank": 19,
+                "Tempo": 72.5,
+                "TempoRank": 7,
+                "SeedNum": 10.0,
+                "Region": "West"
+              }
+            },
+            "winner": "Kansas"
+          },
+          {
+            "team1": {
+              "name": "Alabama",
+              "details": {
+                "Rank": 6,
+                "Team": "Alabama",
+                "Seed": 2,
+                "Conference": "SEC",
+                "Record": "28-9",
+                "NetRating": 30.34,
+                "ORating": 126.8,
+                "ORank": 4,
+                "DRating": 96.5,
+                "DRank": 28,
+                "Tempo": 75.3,
+                "TempoRank": 1,
+                "SeedNum": 2.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "Robert Morris",
+              "details": {
+                "Rank": 133,
+                "Team": "Robert Morris",
+                "Seed": 15,
+                "Conference": "Horz",
+                "Record": "26-9",
+                "NetRating": 2.9,
+                "ORating": 107.5,
+                "ORank": 155,
+                "DRating": 104.6,
+                "DRank": 125,
+                "Tempo": 68.1,
+                "TempoRank": 142,
+                "SeedNum": 15.0,
+                "Region": "West"
+              }
+            },
+            "winner": "Alabama"
+          }
+        ],
+        "second_round": [
+          {
+            "team1": {
+              "name": "SIUE",
+              "details": {
+                "Rank": 217,
+                "Team": "SIUE",
+                "Seed": 16,
+                "Conference": "OVC",
+                "Record": "22-12",
+                "NetRating": -4.5,
+                "ORating": 101.8,
+                "ORank": 261,
+                "DRating": 106.3,
+                "DRank": 158,
+                "Tempo": 66.2,
+                "TempoRank": 254,
+                "SeedNum": 16.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "Creighton",
+              "details": {
+                "Rank": 35,
+                "Team": "Creighton",
+                "Seed": 9,
+                "Conference": "BE",
+                "Record": "25-11",
+                "NetRating": 19.44,
+                "ORating": 117.8,
+                "ORank": 33,
+                "DRating": 98.3,
+                "DRank": 44,
+                "Tempo": 67.3,
+                "TempoRank": 192,
+                "SeedNum": 9.0,
+                "Region": "West"
+              }
+            },
+            "winner": "SIUE"
+          },
+          {
+            "team1": {
+              "name": "Colorado St.",
+              "details": {
+                "Rank": 42,
+                "Team": "Colorado St.",
+                "Seed": 12,
+                "Conference": "MWC",
+                "Record": "26-10",
+                "NetRating": 17.61,
+                "ORating": 116.8,
+                "ORank": 40,
+                "DRating": 99.2,
+                "DRank": 52,
+                "Tempo": 66.0,
+                "TempoRank": 270,
+                "SeedNum": 12.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "High Point",
+              "details": {
+                "Rank": 82,
+                "Team": "High Point",
+                "Seed": 13,
+                "Conference": "BSth",
+                "Record": "29-6",
+                "NetRating": 9.15,
+                "ORating": 118.4,
+                "ORank": 27,
+                "DRating": 109.2,
+                "DRank": 226,
+                "Tempo": 66.5,
+                "TempoRank": 230,
+                "SeedNum": 13.0,
+                "Region": "West"
+              }
+            },
+            "winner": "High Point"
+          },
+          {
+            "team1": {
+              "name": "Missouri",
+              "details": {
+                "Rank": 19,
+                "Team": "Missouri",
+                "Seed": 6,
+                "Conference": "SEC",
+                "Record": "22-12",
+                "NetRating": 23.57,
+                "ORating": 124.4,
+                "ORank": 8,
+                "DRating": 100.8,
+                "DRank": 68,
+                "Tempo": 68.6,
+                "TempoRank": 113,
+                "SeedNum": 6.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "Iowa St.",
+              "details": {
+                "Rank": 11,
+                "Team": "Iowa St.",
+                "Seed": 3,
+                "Conference": "B12",
+                "Record": "25-10",
+                "NetRating": 26.65,
+                "ORating": 119.8,
+                "ORank": 19,
+                "DRating": 93.2,
+                "DRank": 13,
+                "Tempo": 68.8,
+                "TempoRank": 109,
+                "SeedNum": 3.0,
+                "Region": "West"
+              }
+            },
+            "winner": "Missouri"
+          },
+          {
+            "team1": {
+              "name": "Kansas",
+              "details": {
+                "Rank": 24,
+                "Team": "Kansas",
+                "Seed": 7,
+                "Conference": "B12",
+                "Record": "21-13",
+                "NetRating": 22.94,
+                "ORating": 115.9,
+                "ORank": 52,
+                "DRating": 93.0,
+                "DRank": 11,
+                "Tempo": 68.6,
+                "TempoRank": 114,
+                "SeedNum": 7.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "Alabama",
+              "details": {
+                "Rank": 6,
+                "Team": "Alabama",
+                "Seed": 2,
+                "Conference": "SEC",
+                "Record": "28-9",
+                "NetRating": 30.34,
+                "ORating": 126.8,
+                "ORank": 4,
+                "DRating": 96.5,
+                "DRank": 28,
+                "Tempo": 75.3,
+                "TempoRank": 1,
+                "SeedNum": 2.0,
+                "Region": "West"
+              }
+            },
+            "winner": "Kansas"
+          }
+        ],
+        "sweet_sixteen": [
+          {
+            "team1": {
+              "name": "SIUE",
+              "details": {
+                "Rank": 217,
+                "Team": "SIUE",
+                "Seed": 16,
+                "Conference": "OVC",
+                "Record": "22-12",
+                "NetRating": -4.5,
+                "ORating": 101.8,
+                "ORank": 261,
+                "DRating": 106.3,
+                "DRank": 158,
+                "Tempo": 66.2,
+                "TempoRank": 254,
+                "SeedNum": 16.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "High Point",
+              "details": {
+                "Rank": 82,
+                "Team": "High Point",
+                "Seed": 13,
+                "Conference": "BSth",
+                "Record": "29-6",
+                "NetRating": 9.15,
+                "ORating": 118.4,
+                "ORank": 27,
+                "DRating": 109.2,
+                "DRank": 226,
+                "Tempo": 66.5,
+                "TempoRank": 230,
+                "SeedNum": 13.0,
+                "Region": "West"
+              }
+            },
+            "winner": "SIUE"
+          },
+          {
+            "team1": {
+              "name": "Missouri",
+              "details": {
+                "Rank": 19,
+                "Team": "Missouri",
+                "Seed": 6,
+                "Conference": "SEC",
+                "Record": "22-12",
+                "NetRating": 23.57,
+                "ORating": 124.4,
+                "ORank": 8,
+                "DRating": 100.8,
+                "DRank": 68,
+                "Tempo": 68.6,
+                "TempoRank": 113,
+                "SeedNum": 6.0,
+                "Region": "West"
+              }
+            },
+            "team2": {
+              "name": "Kansas",
+              "details": {
+                "Rank": 24,
+                "Team": "Kansas",
+                "Seed": 7,
+                "Conference": "B12",
+                "Record": "21-13",
+                "NetRating": 22.94,
+                "ORating": 115.9,
+                "ORank": 52,
+                "DRating": 93.0,
+                "DRank": 11,
+                "Tempo": 68.6,
+                "TempoRank": 114,
+                "SeedNum": 7.0,
+                "Region": "West"
+              }
+            },
+            "winner": "Kansas"
+          }
+        ],
+        "elite_eight": {
+          "team1": {
+            "name": "SIUE",
+            "details": {
+              "Rank": 217,
+              "Team": "SIUE",
+              "Seed": 16,
+              "Conference": "OVC",
+              "Record": "22-12",
+              "NetRating": -4.5,
+              "ORating": 101.8,
+              "ORank": 261,
+              "DRating": 106.3,
+              "DRank": 158,
+              "Tempo": 66.2,
+              "TempoRank": 254,
+              "SeedNum": 16.0,
+              "Region": "West"
+            }
+          },
+          "team2": {
+            "name": "Kansas",
+            "details": {
+              "Rank": 24,
+              "Team": "Kansas",
+              "Seed": 7,
+              "Conference": "B12",
+              "Record": "21-13",
+              "NetRating": 22.94,
+              "ORating": 115.9,
+              "ORank": 52,
+              "DRating": 93.0,
+              "DRank": 11,
+              "Tempo": 68.6,
+              "TempoRank": 114,
+              "SeedNum": 7.0,
+              "Region": "West"
+            }
+          },
+          "winner": "Kansas"
+        },
+        "regional_champion": "Kansas"
+      }
+    },
+    "final_four": {
+      "semifinals": [
+        {
+          "team1": {
+            "name": "Yale",
+            "details": {
+              "Rank": 74,
+              "Team": "Yale",
+              "Seed": 13,
+              "Conference": "Ivy",
+              "Record": "22-8",
+              "NetRating": 11.02,
+              "ORating": 115.2,
+              "ORank": 59,
+              "DRating": 104.2,
+              "DRank": 115,
+              "Tempo": 67.7,
+              "TempoRank": 169,
+              "SeedNum": 13.0,
+              "Region": "East"
+            }
+          },
+          "team2": {
+            "name": "Texas A&M",
+            "details": {
+              "Rank": 18,
+              "Team": "Texas A&M",
+              "Seed": 4,
+              "Conference": "SEC",
+              "Record": "23-11",
+              "NetRating": 23.66,
+              "ORating": 116.5,
+              "ORank": 42,
+              "DRating": 92.9,
+              "DRank": 10,
+              "Tempo": 66.8,
+              "TempoRank": 215,
+              "SeedNum": 4.0,
+              "Region": "Midwest"
+            }
+          },
+          "winner": "Yale"
+        },
+        {
+          "team1": {
+            "name": "Xavier",
+            "details": {
+              "Rank": 43,
+              "Team": "Xavier",
+              "Seed": 11,
+              "Conference": "BE",
+              "Record": "22-12",
+              "NetRating": 17.19,
+              "ORating": 116.2,
+              "ORank": 47,
+              "DRating": 99.0,
+              "DRank": 48,
+              "Tempo": 69.2,
+              "TempoRank": 84,
+              "SeedNum": 11.0,
+              "Region": "South"
+            }
+          },
+          "team2": {
+            "name": "Kansas",
+            "details": {
+              "Rank": 24,
+              "Team": "Kansas",
+              "Seed": 7,
+              "Conference": "B12",
+              "Record": "21-13",
+              "NetRating": 22.94,
+              "ORating": 115.9,
+              "ORank": 52,
+              "DRating": 93.0,
+              "DRank": 11,
+              "Tempo": 68.6,
+              "TempoRank": 114,
+              "SeedNum": 7.0,
+              "Region": "West"
+            }
+          },
+          "winner": "Xavier"
+        }
+      ],
+      "championship": {
+        "team1": {
+          "name": "Yale",
+          "details": {
+            "Rank": 74,
+            "Team": "Yale",
+            "Seed": 13,
+            "Conference": "Ivy",
+            "Record": "22-8",
+            "NetRating": 11.02,
+            "ORating": 115.2,
+            "ORank": 59,
+            "DRating": 104.2,
+            "DRank": 115,
+            "Tempo": 67.7,
+            "TempoRank": 169,
+            "SeedNum": 13.0,
+            "Region": "East"
+          }
+        },
+        "team2": {
+          "name": "Xavier",
+          "details": {
+            "Rank": 43,
+            "Team": "Xavier",
+            "Seed": 11,
+            "Conference": "BE",
+            "Record": "22-12",
+            "NetRating": 17.19,
+            "ORating": 116.2,
+            "ORank": 47,
+            "DRating": 99.0,
+            "DRank": 48,
+            "Tempo": 69.2,
+            "TempoRank": 84,
+            "SeedNum": 11.0,
+            "Region": "South"
+          }
+        },
+        "winner": "Yale"
+      },
+      "champion": "Yale"
+    },
+    "metadata": {
+      "simulation_time": "2025-05-10 13:04:02",
+      "simulation_id": 4055201,
+      "historical_simulations": 1
+    }
+}
+  
