@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import pandas as pd
 import numpy as np
 import json
@@ -142,6 +141,13 @@ class AdvancedBasketballSimulator:
                 
             except Exception as e:
                 print(f"Error loading historical data: {e}")
+                # Remove the corrupt file if it exists
+                if os.path.exists(history_file):
+                    try:
+                        os.remove(history_file)
+                        print(f"Removed corrupt history file: {history_file}")
+                    except Exception as remove_error:
+                        print(f"Could not remove corrupt file: {remove_error}")
                 return self._initialize_historical_results()
         else:
             return self._initialize_historical_results()
@@ -164,7 +170,7 @@ class AdvancedBasketballSimulator:
             'matchup_insights': defaultdict(lambda: defaultdict(list)),  # Matchup-specific insights
             'stat_correlations': {},  # Correlation between stats and success
             'feature_importance': {},  # Importance of different features in prediction
-            'dynamic_weights': self.base_stat_weights.copy(),  # Dynamically adjusted weights
+            'dynamic_weights': getattr(self, 'base_stat_weights', {}).copy(),  # Dynamically adjusted weights
             'upset_tracker': {  # Track upset patterns
                 'by_seed_diff': defaultdict(lambda: {'occurred': 0, 'total': 0}),
                 'by_round': defaultdict(lambda: {'occurred': 0, 'total': 0}),
@@ -183,8 +189,14 @@ class AdvancedBasketballSimulator:
     
     def _load_ml_models(self):
         """Load or initialize machine learning models for game prediction."""
-        models_dir = 'data/ml_models'
-        os.makedirs(models_dir, exist_ok=True)
+        # Use absolute paths based on the current file
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        models_dir = os.path.join(base_dir, 'data', 'ml_models')
+        
+        try:
+            os.makedirs(models_dir, exist_ok=True)
+        except Exception as e:
+            print(f"Warning: Could not create models directory: {e}")
         
         models = {
             'random_forest': None,
@@ -682,24 +694,24 @@ class AdvancedBasketballSimulator:
         # Initialize strength score
         strength = 0
         
-        # Apply dynamic weights to each statistic
+        # Apply dynamic weights to each statistic - with checks for missing keys
         if 'Tempo' in team:
-            strength += team['Tempo'] * self.dynamic_weights['Tempo'] / 100
+            strength += team['Tempo'] * self.dynamic_weights.get('Tempo', 1.0) / 100
         
         if 'ORating' in team:
-            strength += team['ORating'] * self.dynamic_weights['ORating'] / 100
+            strength += team['ORating'] * self.dynamic_weights.get('ORating', 3.0) / 100
         
         if 'DRating' in team:
             # Lower defensive rating is better
-            strength += (120 - team['DRating']) * self.dynamic_weights['DRating'] / 120
+            strength += (120 - team['DRating']) * self.dynamic_weights.get('DRating', 3.0) / 120
         
         if 'NetRating' in team:
             # Adjust to ensure positive contribution for good teams
-            strength += (team['NetRating'] + 50) * self.dynamic_weights['NetRating'] / 100
+            strength += (team['NetRating'] + 50) * self.dynamic_weights.get('NetRating', 2.5) / 100
         
         if 'SeedNum' in team:
             # Lower seed is better
-            strength += (17 - team['SeedNum']) * self.dynamic_weights['SeedNum'] / 16
+            strength += (17 - team['SeedNum']) * self.dynamic_weights.get('SeedNum', 1.0) / 16
         
         # Win-loss record contribution with enhanced Power 5 weighting
         if 'Record' in team:
@@ -714,14 +726,14 @@ class AdvancedBasketballSimulator:
                     conf_multiplier = self.power_conferences[conference]
                     win_pct = win_pct * conf_multiplier
                 
-                strength += win_pct * self.dynamic_weights['WinPct']
+                strength += win_pct * self.dynamic_weights.get('WinPct', 2.0)
             except:
                 pass
         
         # Advanced conference strength contribution
         if 'Conference' in team:
             conf_factor = self.power_conferences.get(team['Conference'], 1.0)
-            strength += conf_factor * self.dynamic_weights['ConferenceStrength']
+            strength += conf_factor * self.dynamic_weights.get('ConferenceStrength', 1.5)
         
         # Historical performance contribution
         team_history = self.historical_results['team_stats'].get(team_name, {'wins': 0, 'losses': 0})
@@ -741,7 +753,7 @@ class AdvancedBasketballSimulator:
                 'championship': 0.35
             }
             
-            strength += historical_win_pct * round_weights.get(round_name, 0.2) * self.dynamic_weights['HistoricalSuccess']
+            strength += historical_win_pct * round_weights.get(round_name, 0.2) * self.dynamic_weights.get('HistoricalSuccess', 1.0)
             
             # Add bonus for teams that have historically gone far
             deep_run_bonus = 0
@@ -758,12 +770,12 @@ class AdvancedBasketballSimulator:
             
             # Cap and scale the bonus
             deep_run_bonus = min(deep_run_bonus, 3.0)
-            strength += deep_run_bonus * self.dynamic_weights['HistoricalSuccess'] / 3
+            strength += deep_run_bonus * self.dynamic_weights.get('HistoricalSuccess', 1.0) / 3
         
         # Expected points margin contribution
-        if 'ORating' in team and 'DRating' in team and 'Tempo' in team:
+        if all(key in team for key in ('ORating', 'DRating', 'Tempo')):
             expected_margin = (team['ORating']/100 - team['DRating']/100) * (team['Tempo']/70)
-            strength += expected_margin * self.dynamic_weights['ExpectedPointsMargin']
+            strength += expected_margin * self.dynamic_weights.get('ExpectedPointsMargin', 2.0)
         
         # If opponent is provided, add head-to-head and matchup-specific adjustments
         if opponent_name:
@@ -2212,6 +2224,11 @@ class AdvancedBasketballSimulator:
         return prediction
 
 def simulate_single_tournament(input_csv, output_json):
+    pass
+# Initialize default base_stat_weights
+def simulate_single_tournament(input_csv, output_json):
+    pass
+def simulate_single_tournament(input_csv, output_json):
     """
     Run a single tournament simulation with the enhanced learning algorithm and export the results.
     
@@ -2222,10 +2239,40 @@ def simulate_single_tournament(input_csv, output_json):
     Returns:
         Path to the output file
     """
-    simulator = AdvancedBasketballSimulator(input_csv)
-    simulator.simulate_tournament()
-    output_path = simulator.export_results(output_json)
-    return output_path
+    try:
+        # Set the MPLCONFIGDIR environment variable to a writable directory
+        import os
+        os.environ['MPLCONFIGDIR'] = '/tmp'
+        
+        # Initialize the simulator
+        simulator = AdvancedBasketballSimulator(input_csv)
+        
+        # Run the simulation
+        simulator.simulate_tournament()
+        
+        # Export results
+        output_path = simulator.export_results(output_json)
+        return output_path
+    except Exception as e:
+        import traceback
+        print(f"Error in tournament simulation: {str(e)}")
+        print(traceback.format_exc())
+        
+        # Create a minimal results structure in case of error
+        minimal_results = {
+            "error": str(e),
+            "traceback": traceback.format_exc(),
+            "regions": {},
+            "final_four": {"semifinals": [], "championship": None, "champion": None},
+            "metadata": {"simulation_time": "Error", "simulation_id": "error"}
+        }
+        
+        # Save the minimal results
+        import json
+        with open(output_json, 'w') as f:
+            json.dump(minimal_results, f, indent=2)
+        
+        return output_json
 
 def run_advanced_simulation(input_csv, output_dir='data', num_simulations=10, predictive_analysis=True):
     """

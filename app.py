@@ -35,6 +35,9 @@ def index():
         # Read the results
         with open(RESULTS_JSON, 'r') as f:
             results = json.load(f)
+
+            # Ensure the results structure has all the necessary components
+            ensure_valid_results_structure(results)
         
         # Return the rendered template
         return render_template('index.html', results=results)
@@ -43,10 +46,48 @@ def index():
         print(error_message)
         return f"An error occurred: {str(e)}<br><pre>{traceback.format_exc()}</pre>", 500
 
+def ensure_valid_results_structure(results):
+    """
+    Ensure the results JSON has a valid structure that the template expects.
+    If any required elements are missing, initialize them to prevent template errors.
+    """
+    # Ensure final_four exists
+    if 'final_four' not in results:
+        results['final_four'] = {}
+    
+    # Ensure semifinals exist as a list with at least 2 elements
+    if 'semifinals' not in results['final_four'] or not isinstance(results['final_four']['semifinals'], list):
+        results['final_four']['semifinals'] = [None, None]
+    
+    # Ensure we have at least 2 semifinal spots
+    while len(results['final_four']['semifinals']) < 2:
+        results['final_four']['semifinals'].append(None)
+    
+    # Ensure championship exists
+    if 'championship' not in results['final_four'] or not results['final_four']['championship']:
+        results['final_four']['championship'] = None
+    
+    # Ensure champion exists
+    if 'champion' not in results['final_four']:
+        results['final_four']['champion'] = None
+    
+    # Ensure all regions are properly initialized
+    if 'regions' not in results:
+        results['regions'] = {}
+    
+    # Fill in metadata if missing
+    if 'metadata' not in results:
+        results['metadata'] = {
+            'simulation_time': 'Not Available',
+            'simulation_id': 'Not Available'
+        }
 @app.route('/simulate', methods=['POST'])
 def simulate_tournament():
     """Run a new tournament simulation and return the results"""
     try:
+        # Set environment variable for matplotlib
+        os.environ['MPLCONFIGDIR'] = '/tmp'
+        
         # Check if teams data exists, if not, run the parser
         if not os.path.exists(TEAMS_CSV):
             # Since we can't run parse_kenpom.py directly here,
@@ -56,6 +97,29 @@ def simulate_tournament():
                                      'Tempo', 'TempoRank', 'SeedNum', 'Region'])
             df.to_csv(TEAMS_CSV, index=False)
             return jsonify({'error': 'Team data not found'}), 404
+        
+        # Load and check the CSV data
+        df = pd.read_csv(TEAMS_CSV)
+        
+        # Check if required columns exist
+        required_columns = ['Team', 'SeedNum', 'Region']
+        missing_columns = [col for col in required_columns if col not in df.columns]
+        
+        if missing_columns:
+            return jsonify({'error': f'Required columns missing: {missing_columns}'}), 400
+        
+        # Ensure all teams have required stats
+        stats_columns = ['ORating', 'DRating', 'Tempo', 'NetRating']
+        
+        # Fill any missing stats with default values
+        for col in stats_columns:
+            if col not in df.columns:
+                df[col] = 100.0  # Default value
+            else:
+                df[col] = df[col].fillna(100.0)
+                
+        # Save the updated dataframe back to CSV
+        df.to_csv(TEAMS_CSV, index=False)
         
         # Run the simulation
         simulate_single_tournament(TEAMS_CSV, RESULTS_JSON)
@@ -218,3 +282,6 @@ if __name__ == '__main__':
     
     # Run the app
     app.run(host='0.0.0.0', port=5000, debug=True)
+
+    if __name__ == '__main__':
+        app.run(debug=True)

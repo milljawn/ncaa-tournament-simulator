@@ -7,7 +7,7 @@ import site
 sys.path.insert(0, "/var/www/ncaa-tournament")
 
 # Activate virtual environment
-activate_this = "/var/www/ncaa-tournament/venv/bin/python3.12.py"
+activate_this = "/var/www/ncaa-tournament/venv/bin/activate_this.py"
 if os.path.exists(activate_this):
     exec(open(activate_this).read(), dict(__file__=activate_this))
 
